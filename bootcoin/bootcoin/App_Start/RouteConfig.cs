@@ -16,7 +16,19 @@ namespace bootcoin
             );
 
             routes.MapRoute(
-                name: "Default",
+                name: "Trainee",
+                url: "Trainee/{action}",
+                defaults: new {controller="Trainee", action = "Index"}
+            );
+
+            routes.MapRoute(
+                name: "Debug",
+                url: "Debug/{action}",
+                defaults: new { controller = "Debug", action = "Index"}
+            );
+
+            routes.MapRoute(
+                name: "Exception",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );

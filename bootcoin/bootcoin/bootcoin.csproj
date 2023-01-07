@@ -79,6 +79,9 @@
     <Folder Include="Scripts\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Content\Css\" />
+    <Folder Include="Views\Trainee\" />
+    <Folder Include="Views\Debug\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -88,10 +91,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\TraineeController.cs" />
+    <Compile Include="Controllers\DebugController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -100,12 +104,20 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\CommonFrame.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\TeamMember.cshtml" />
-    <Content Include="Views\Admin\Redeem.cshtml" />
-    <Content Include="Views\Admin\History.cshtml" />
     <Content Include="Content\Images\placeholder.jpg" />
     <Content Include="Content\Css\CommonFrame.css" />
     <Content Include="Content\Icons\site-logo.png" />
+    <Content Include="Views\Trainee\Index.cshtml" />
+    <Content Include="Views\Trainee\Redeem.cshtml" />
+    <Content Include="Views\Trainee\History.cshtml" />
+    <Content Include="Views\Trainee\TeamMember.cshtml" />
+    <Content Include="Views\Admin\Teams.cshtml" />
+    <Content Include="Views\Debug\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Content\Icons\cry-emoji.png" />
+    <Content Include="Content\Icons\search-icon.png" />
+    <Content Include="Content\Icons\chevron-down.png" />
+    <Content Include="Content\Icons\bell-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

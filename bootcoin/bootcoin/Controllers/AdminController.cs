@@ -12,17 +12,9 @@ namespace bootcoin.Controllers
         {
             return View();
         }
-        public ActionResult TeamMember()
+        public ActionResult Teams()
         {
-            return View("~/Views/Admin/TeamMember.cshtml");
-        }
-        public ActionResult Redeem()
-        {
-            return View("~/Views/Admin/Redeem.cshtml");
-        }
-        public ActionResult History()
-        {
-            return View("~/Views/Admin/History.cshtml");
+            return View("~/Views/Admin/Teams.cshtml");
         }
     }
 }
