@@ -1,10 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>@ViewBag.Title</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @RenderSection("Styles", false)
+    @RenderSection("Scripts", false)
 </head>
+
 <body>
-	@RenderBody()
+    @RenderBody()
 </body>
+
 </html>

@@ -77,6 +77,8 @@
     <Folder Include="Content\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Content\Css\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -85,6 +87,7 @@
     </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -95,6 +98,14 @@
     <Content Include="Web.config" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
+    <Content Include="Views\Shared\CommonFrame.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\TeamMember.cshtml" />
+    <Content Include="Views\Admin\Redeem.cshtml" />
+    <Content Include="Views\Admin\History.cshtml" />
+    <Content Include="Content\Images\placeholder.jpg" />
+    <Content Include="Content\Css\CommonFrame.css" />
+    <Content Include="Content\Icons\site-logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
