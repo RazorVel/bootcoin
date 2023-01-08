@@ -14,7 +14,6 @@
     margin-top:-10px;
 }
 #logo {
-
     margin-top: 40px;
     margin-left: 40px;
     margin-right: 40px;
@@ -34,23 +33,24 @@
     margin-right: 87px;
     margin-left: 82px;
     width: 75%;
-    margin-top: 126px;
+    margin-top: 90px;
+
 }
 #greeting {
     color: black;
-    font-size: 3vw;
+    font-size: 48px;
     font-weight: 700;
 }
 
 #greeting-sub {
     inline-size: 100%;
-    font-size: 1.4vw;
+    font-size: 24px;
     color: black;
 }
 
 
 #email {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 ::placeholder { 
@@ -85,7 +85,7 @@
     background-color: transparent;
 }
 
-#password-icon, #email-icon {
+#password-icon, #email-icon, #confirm-icon {
     position: absolute;
     margin-top: 15px;
     display: block;
@@ -94,7 +94,8 @@
     height: auto;
 }
 
-#password-eye {
+
+#password-eye, #confirm-eye {
     position: absolute;
     display: block;
     right: 13px;
@@ -102,6 +103,7 @@
     width: 25px;
     height: auto;
 }
+
 
 .input-group > input:focus {
     background-color: transparent;
@@ -119,6 +121,7 @@
 }
 #register{
     margin-top: 10px;
+    font-size:18px;
 }
 #facebook, #google {
     margin-top: 10px;
@@ -130,16 +133,26 @@
      filter: gray;
      -webkit-filter: grayscale(50%);
 }
-a {
+#registerlink {
+    font-size: 18px;
     padding-left: 5px;
     font-weight: 700;
     color: #2B91FE;
 }
 
-a:visited, a:link, a:active {
+#registerlink:visited, #registerlink:link, #registerlink:active {
     text-decoration: none;
 }
 
-a:hover{
-    color:black;
+#registerlink:hover, #termsconditionslink:hover {
+     color: black;
+}
+
+.input[checkbox]{
+    margin-top: 15px;
+}
+#termsconditions {
+    padding-left: 5px;
+    font-size: 18px;
+    margin-top: 15px;
 }

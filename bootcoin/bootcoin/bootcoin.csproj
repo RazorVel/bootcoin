@@ -115,12 +115,19 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="signup.aspx.cs">
-      <DependentUpon>signup.aspx</DependentUpon>
+    <Compile Include="sign-in.aspx.cs">
+      <DependentUpon>sign-in.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="signup.aspx.designer.cs">
-      <DependentUpon>signup.aspx</DependentUpon>
+    <Compile Include="sign-in.aspx.designer.cs">
+      <DependentUpon>sign-in.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sign-up.aspx.cs">
+      <DependentUpon>sign-up.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sign-up.aspx.designer.cs">
+      <DependentUpon>sign-up.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -160,7 +167,8 @@
     <Content Include="Content\Icons\chevron-down.png" />
     <Content Include="Content\Icons\bell-icon.png" />
     <Content Include="WebForm1.aspx" />
-    <Content Include="signup.aspx" />
+    <Content Include="sign-in.aspx" />
+    <Content Include="sign-up.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site1.Master" />
