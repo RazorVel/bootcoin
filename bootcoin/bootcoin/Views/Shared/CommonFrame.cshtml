@@ -1,14 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-
-    const string ContentFolder = "/Content/";
-    const string ImageFolder = ContentFolder + "/Images/";
-    const string IconFolder = ContentFolder + "/Icons/";
-    const string StyleFolder = ContentFolder + "/Css/";
-
-    const string ScriptFolder = "/Scripts/";
-
     string active = ViewBag.Active;
     const string ACTIVE_CLASS = "current";
 
@@ -37,16 +29,18 @@
 }
 
 @section Styles{
-<link rel="stylesheet" href="@(StyleFolder)/CommonFrame.css">
+<link rel="stylesheet" href="~/Content/Css/CommonFrame.css">
+<link rel="stylesheet" href="~/Content/Css/ContentHeader.css">
 @RenderSection("Styles", false)
 }
 
 @section Scripts{
-<script src="@(ScriptFolder)/CommonFrame.js"></script>
+<script src="~/Scripts/CommonFrame.js"></script>
+@RenderSection("Scripts", false)
 }
 
 <div class="site-logo grid-item">
-    <img src="@(IconFolder)/site-logo.png" alt="logo">
+    <img src="~/Content/Icons/site-logo.png" alt="logo">
     <span class="prevent-select">Bootcoin</span>
 </div>
 
@@ -54,17 +48,17 @@
     <div class="nav-feature">
         <div class="search">
             <input type="text" placeholder="Search">
-            <img src="@(IconFolder)/search-icon.png" alt="search">
+            <img src="~/Content/Icons/search-icon.png" alt="search">
         </div>
     </div>
     <div class="about-user">
         <div class="notification">
-            <img src="@(IconFolder)/bell-icon.png" alt="bell">
+            <img src="~/Content/Icons/bell-icon.png" alt="bell">
         </div>
         <div class="profile">
-            <img class="avatar" src="@(ImageFolder)/placeholder.jpg" alt="avatar">
+            <img class="avatar" src="~/Content/Images/placeholder.jpg" alt="avatar">
             <span class="comment prevent-select">Hi, @(userName)</span>
-            <img class="chevron" src="@(IconFolder)/chevron-down.png" alt="chevron">
+            <img class="chevron" src="~/Content/Icons/chevron-down.png" alt="chevron">
         </div>
     </div>
 </nav>
@@ -80,7 +74,8 @@
             </svg>
             <span>Home</span>
         </a>
-        <a href="/@(controller)/@(controller == "admin" ? "teams" : (controller == "trainee" ? "teammember" : "error"))/" class="menu-0 @(ViewBag.ActiveTeam)">
+        <a href="/@(controller)/@(controller == "admin" ? "teams" : (controller == "trainee" ? "teammember" : "error"))/"
+            class="menu-0 @(ViewBag.ActiveTeam)">
             <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 24 24"
                 style="transform: ;msFilter:;">
                 <path
@@ -118,7 +113,7 @@
         }
     </div>
 </div>
-<div class="content grid-item">
 
+<div class="content grid-item">
     @RenderBody()
 </div>

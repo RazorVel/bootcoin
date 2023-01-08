@@ -1,0 +1,45 @@
+.content-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.content-header .about {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content-header .about .title {
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.content-header .about .description {
+    font-weight: 400;
+    font-size: 19px;
+    color: var(--content-header-description);
+}
+
+.content-header .feature .button {
+    width: fit-content;
+    border-radius: 10px;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--sort-button-background);
+}
+
+.content-header .feature .button > img {
+    width: 29px;
+    height: 29px;
+}
+
+.content-header .feature .button > span {
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--button-text);
+}
