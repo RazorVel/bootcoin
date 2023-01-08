@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{A3213C37-37E3-4FBF-9F57-BB06EC192A3F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="bootcoin/Views/Home/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="bootcoin/Scripts/History.ts">
     <Files>
       <File FileName="bootcoin/App_Start/RouteConfig.cs" Line="27" Column="71" />
       <File FileName="bootcoin/App_Start/WebApiConfig.cs" Line="1" Column="1" />
-      <File FileName="bootcoin/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="bootcoin/Controllers/HomeController.cs" Line="13" Column="11" />
       <File FileName="bootcoin/Views/Debug/Index.cshtml" Line="1" Column="1" />
       <File FileName="bootcoin/Global.asax" Line="1" Column="1" />
       <File FileName="bootcoin/Global.asax.cs" Line="1" Column="1" />
       <File FileName="bootcoin/packages.config" Line="1" Column="1" />
-      <File FileName="bootcoin/Views/Shared/Error.cshtml" Line="6" Column="1" />
+      <File FileName="bootcoin/Views/Shared/Error.cshtml" Line="5" Column="2" />
       <File FileName="bootcoin/Views/Admin/Index.cshtml" Line="1" Column="1" />
       <File FileName="bootcoin/Controllers/Admin.cs" Line="1" Column="1" />
-      <File FileName="bootcoin/Views/Trainee/TeamMember.cshtml" Line="4" Column="42" />
-      <File FileName="bootcoin/Views/Trainee/Redeem.cshtml" Line="1" Column="1" />
-      <File FileName="bootcoin/Views/Shared/_Layout.cshtml" Line="9" Column="37" />
+      <File FileName="bootcoin/Views/Trainee/TeamMember.cshtml" Line="1" Column="1" />
+      <File FileName="bootcoin/Views/Trainee/Redeem.cshtml" Line="9" Column="5" />
+      <File FileName="bootcoin/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
       <File FileName="bootcoin/Controllers/AdminController.cs" Line="17" Column="45" />
       <File FileName="bootcoin/Content/Css/CommonFrame.css" Line="1" Column="1" />
       <File FileName="bootcoin/Web.config" Line="1" Column="1" />
@@ -21,9 +21,12 @@
       <File FileName="bootcoin/Controllers/TraineeController.cs" Line="17" Column="52" />
       <File FileName="bootcoin/Views/Trainee/Index.cshtml" Line="6" Column="2" />
       <File FileName="bootcoin/Views/Admin/Teams.cshtml" Line="6" Column="2" />
-      <File FileName="bootcoin/Views/Shared/CommonFrame.cshtml" Line="117" Column="17" />
-      <File FileName="bootcoin/Controllers/DebugController.cs" Line="13" Column="28" />
-      <File FileName="bootcoin/Views/Home/Index.cshtml" Line="4" Column="1" />
+      <File FileName="bootcoin/Views/Shared/CommonFrame.cshtml" Line="1" Column="1" />
+      <File FileName="bootcoin/Controllers/DebugController.cs" Line="22" Column="6" />
+      <File FileName="bootcoin/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="bootcoin/Content/Css/_Layout.css" Line="6" Column="2" />
+      <File FileName="bootcoin/Content/Css/History.css" Line="1" Column="1" />
+      <File FileName="bootcoin/Scripts/History.ts" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,15 +35,18 @@
             <Node name="bootcoin" expanded="True">
               <Node name="App_Start" expanded="True" />
               <Node name="Content" expanded="True">
+                <Node name="Css" expanded="True" />
+                <Node name="Icons" expanded="True" />
                 <Node name="Images" expanded="True" />
               </Node>
               <Node name="Controllers" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="History.ts" selected="True" />
+              </Node>
               <Node name="Views" expanded="True">
                 <Node name="Admin" expanded="True" />
                 <Node name="Debug" expanded="True" />
-                <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
                 <Node name="Trainee" expanded="True" />
               </Node>
@@ -49,6 +55,11 @@
               <Node name="Controllers" expanded="True" />
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="bootcoin" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

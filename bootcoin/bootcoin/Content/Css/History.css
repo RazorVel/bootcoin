@@ -1,0 +1,95 @@
+﻿.history {
+    width: 100%;
+    height: 524px;
+    border-radius: 15px;
+    border-collapse: collapse;
+    font-size: 20px;
+    box-shadow: 0 2px 4px 0 var(--card-shadow);
+}
+
+.history th,
+.history td {
+    width: calc(100% / 5);
+    padding: 0 60px;
+}
+
+.history th {
+    height: 80px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--history-text-head);
+}
+
+.history td {
+    font-weight: 400;
+    height: 61px;
+    color: var(--history-text-body);
+}
+
+.history .head {
+    background-color: var(--history-table-head);
+}
+
+.history .head .legend {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.history .head .legend > img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    fill: green;
+}
+
+.history .entry:nth-child(even) {
+    background-color: var(--history-table-odd);
+}
+
+.history .entry:nth-child(odd) {
+    background-color: var(--history-table-even);
+}
+
+.history tr:first-child th:first-child {
+    border-top-left-radius: 15px;
+}
+
+.history tr:first-child th:last-child {
+    border-top-right-radius: 15px;
+}
+
+.history tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+.history tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+.history .entry .amount.green > span {
+    font-weight: 600;
+    color: var(--history-green);
+}
+
+.history .entry .amount.red > span {
+    font-weight: 600;
+    color: var(--history-red);
+}
+
+.history .entry .balance > span {
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--history-balance);
+}
+
+.history .entry .balance > span::before {
+    content: "";
+    background: url("/Content/Icons/site-logo.png") no-repeat;
+    background-size: 100% 100%;
+    width: 24px;
+    height: 24px;
+    float: left;
+    margin-right: 10px;
+}

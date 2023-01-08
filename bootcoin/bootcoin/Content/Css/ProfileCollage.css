@@ -25,7 +25,8 @@
 }
 
 .profile-collage .container:hover .card {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) rotateZ(180deg);
+    color: var(--card-normal);
 }
 
 .profile-collage .container .card .front,
@@ -67,6 +68,7 @@
 .profile-collage .container .card .front .detail .identity .role {
     font-weight: 400;
     font-size: 18px;
+    color: var(--card-role);
 }
 .profile-collage .container .card .front .detail .credit {
     display: flex;
@@ -81,10 +83,11 @@
 .profile-collage .container .card .front .detail .credit > span {
     font-weight: 400;
     font-size: 17px;
+    color: var(--card-value);
 }
 
 .profile-collage .container .card .back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) rotateZ(-180deg);
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -174,6 +177,7 @@
     width: 120px;
 }
 .profile-collage .container .card .back .detail .attribute .value {
+    color: var(--card-value);
 }
 .profile-collage .container .card .back .detail .attribute .value::before {
     content: ": ";
@@ -186,6 +190,7 @@
     display: flex;
     flex-direction: column;
     gap: 3px;
+    color: var(--card-value);
 }
 .profile-collage
     .container

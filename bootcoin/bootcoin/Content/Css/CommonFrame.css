@@ -12,14 +12,25 @@
     --search-border: #a3abc05c;
     --nav-left-active: #2a77f3;
     --nav-left-base: #353535;
-    --link-text: black;
-    --button-text: white;
+    --nav-left-inverse: #ffffff;
+    --link-text: #000000;
+    --button-text: #ffffff;
     --sort-button-background: #ffbd63;
     --header-description: #686868;
     --scrollbar-thumb: #ffbd63;
-    --card-background: white;
+    --card-background: #ffffff;
     --card-shadow: #00000027;
+    --card-normal: #212121;
     --card-role: #696969;
+    --card-value: #696969;
+    --history-table-head: #2a77f3;
+    --history-table-even: #a3abc02e;
+    --history-table-odd: #ffffff;
+    --history-text-head: #ffffff;
+    --history-text-body: #000000;
+    --history-green: #4caf50;
+    --history-red: #ff3d00;
+    --history-balance: #696969;
 }
 
 * {
@@ -55,6 +66,15 @@ a {
     -ms-user-select: none; /* IE 10 and IE 11 */
     -moz-user-select: none;
     user-select: none; /* Standard syntax */
+}
+
+.hover {
+    transition: all ease-in-out 0.2s;
+}
+
+.hover:hover {
+    transform: scale(1.1);
+    transition: all ease-in-out 0.2s;
 }
 
 .grid-item {
@@ -122,6 +142,7 @@ a {
     align-items: center;
     gap: 50px;
 }
+
 .nav-top .about-user .notification > img {
     width: 29px;
     height: 29px;
@@ -159,14 +180,23 @@ a {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 25px;
+    gap: 5px;
+    width: 100%;
+    padding: 0 30px;
 }
 
 .nav-left .hierarchy .menu-0 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 15px;
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.nav-left .hierarchy .menu-0.current {
+    background-color: var(--nav-left-active);
 }
 
 .nav-left .hierarchy .menu-0 > svg {
@@ -175,7 +205,8 @@ a {
     fill: var(--nav-left-base);
 }
 .nav-left .hierarchy .menu-0.current > svg {
-    fill: var(--nav-left-active);
+    color: var(--nav-left-inverse);
+    fill: var(--nav-left-inverse);
 }
 
 .nav-left .hierarchy .menu-0 > span {
@@ -184,7 +215,8 @@ a {
     color: var(--nav-left-base);
 }
 .nav-left .hierarchy .menu-0.current > span {
-    color: var(--nav-left-active);
+    color: var(--nav-left-inverse);
+    fill: var(--nav-left-inverse);
 }
 
 .content {
@@ -200,6 +232,7 @@ a {
 
 .content::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
 }
 
 .content::-webkit-scrollbar-thumb {

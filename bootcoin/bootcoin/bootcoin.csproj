@@ -118,6 +118,24 @@
     <Content Include="Content\Icons\search-icon.png" />
     <Content Include="Content\Icons\chevron-down.png" />
     <Content Include="Content\Icons\bell-icon.png" />
+    <Content Include="Content\Icons\sort-icon.png" />
+    <Content Include="Content\Css\ProfileCollage.css" />
+    <Content Include="Content\Css\ContentHeader.css" />
+    <Content Include="Content\Css\_Layout.css" />
+    <Content Include="Content\Css\History.css" />
+    <Content Include="Content\Icons\table-sort-ascending.svg" />
+    <Content Include="Content\Icons\table-sort.svg" />
+    <Content Include="Content\Icons\table-sort-descending.svg" />
+    <Content Include="Scripts\History.js" />
+    <Content Include="Content\Favicons\favicon-32x32.png" />
+    <Content Include="Content\Favicons\android-chrome-192x192.png" />
+    <Content Include="Content\Favicons\android-chrome-512x512.png" />
+    <Content Include="Content\Favicons\apple-touch-icon.png" />
+    <Content Include="Content\Favicons\favicon-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Favicons\favicon.ico" />
+    <None Include="Content\Favicons\site.webmanifest" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
