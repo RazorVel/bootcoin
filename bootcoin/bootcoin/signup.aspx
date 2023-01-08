@@ -60,8 +60,14 @@
                            </div>
 
                            <div class="center">
-                                <img src="images/facebook.png" id ="facebook"/>
-                                <img src="images/google.png" id="google"/>
+                               <a href ="#">
+                                   <img src="images/facebook.png" id ="facebook"/>
+                               </a>
+                               <a href="#">
+                                   <img src="images/google.png" id="google" />
+                               </a>
+                                
+                                
                             </div> 
                            </div>
                       </div>
