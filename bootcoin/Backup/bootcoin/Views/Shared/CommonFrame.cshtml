@@ -1,0 +1,124 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+    const string ContentFolder = "/Content/";
+    const string ImageFolder = ContentFolder + "/Images/";
+    const string IconFolder = ContentFolder + "/Icons/";
+    const string StyleFolder = ContentFolder + "/Css/";
+
+    const string ScriptFolder = "/Scripts/";
+
+    string active = ViewBag.Active;
+    const string ACTIVE_CLASS = "current";
+
+    switch (active)
+    {
+        case "home":
+            ViewBag.ActiveHome = ACTIVE_CLASS;
+            break;
+        case "team":
+            ViewBag.ActiveTeam = ACTIVE_CLASS;
+            break;
+        case "redeem":
+            ViewBag.ActiveRedeem = ACTIVE_CLASS;
+            break;
+        case "history":
+            ViewBag.ActiveHistory = ACTIVE_CLASS;
+            break;
+        default:
+            break;
+    }
+
+    string controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower();
+
+    string userName = "User";
+
+}
+
+@section Styles{
+<link rel="stylesheet" href="@(StyleFolder)/CommonFrame.css">
+@RenderSection("Styles", false)
+}
+
+@section Scripts{
+<script src="@(ScriptFolder)/CommonFrame.js"></script>
+}
+
+<div class="site-logo grid-item">
+    <img src="@(IconFolder)/site-logo.png" alt="logo">
+    <span class="prevent-select">Bootcoin</span>
+</div>
+
+<nav class="nav-top grid-item">
+    <div class="nav-feature">
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <img src="@(IconFolder)/search-icon.png" alt="search">
+        </div>
+    </div>
+    <div class="about-user">
+        <div class="notification">
+            <img src="@(IconFolder)/bell-icon.png" alt="bell">
+        </div>
+        <div class="profile">
+            <img class="avatar" src="@(ImageFolder)/placeholder.jpg" alt="avatar">
+            <span class="comment prevent-select">Hi, @(userName)</span>
+            <img class="chevron" src="@(IconFolder)/chevron-down.png" alt="chevron">
+        </div>
+    </div>
+</nav>
+
+<div class="nav-left grid-item">
+    <div class="hierarchy">
+        <a href="/@(controller)/" class="menu-0 @(ViewBag.ActiveHome)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 24 24"
+                style="transform: ;msFilter:;">
+                <path
+                    d="M5 22h14a2 2 0 0 0 2-2v-9a1 1 0 0 0-.29-.71l-8-8a1 1 0 0 0-1.41 0l-8 8A1 1 0 0 0 3 11v9a2 2 0 0 0 2 2zm5-2v-5h4v5zm-5-8.59 7-7 7 7V20h-3v-5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v5H5z">
+                </path>
+            </svg>
+            <span>Home</span>
+        </a>
+        <a href="/@(controller)/@(controller == "admin" ? "teams" : (controller == "trainee" ? "teammember" : "error"))/" class="menu-0 @(ViewBag.ActiveTeam)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 24 24"
+                style="transform: ;msFilter:;">
+                <path
+                    d="M16.604 11.048a5.67 5.67 0 0 0 .751-3.44c-.179-1.784-1.175-3.361-2.803-4.44l-1.105 1.666c1.119.742 1.8 1.799 1.918 2.974a3.693 3.693 0 0 1-1.072 2.986l-1.192 1.192 1.618.475C18.951 13.701 19 17.957 19 18h2c0-1.789-.956-5.285-4.396-6.952z">
+                </path>
+                <path
+                    d="M9.5 12c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2zm1.5 7H8c-3.309 0-6 2.691-6 6v1h2v-1c0-2.206 1.794-4 4-4h3c2.206 0 4 1.794 4 4v1h2v-1c0-3.309-2.691-6-6-6z">
+                </path>
+            </svg>
+            <span>@(controller == "admin" ? "Teams" : (controller == "trainee" ? "Team Members" : "error"))</span>
+        </a>
+        @if (controller == "trainee")
+        {
+            <a href="/trainee/redeem/" class="menu-0 @(ViewBag.ActiveRedeem)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 24 24"
+                style="transform: ;msFilter:;">
+                    <path
+                    d="M21 4H2v2h2.3l3.28 9a3 3 0 0 0 2.82 2H19v-2h-8.6a1 1 0 0 1-.94-.66L9 13h9.28a2 2 0 0 0 1.92-1.45L22 5.27A1 1 0 0 0 21.27 4 .84.84 0 0 0 21 4zm-2.75 7h-10L6.43 6h13.24z">
+                    </path>
+                    <circle cx="10.5" cy="19.5" r="1.5"></circle>
+                    <circle cx="16.5" cy="19.5" r="1.5"></circle>
+                </svg>
+                <span>Redeem</span>
+            </a>
+            <a href="/trainee/history/" class="menu-0 @(ViewBag.ActiveHistory)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 24 24"
+                style="transform: ;msFilter:;">
+                    <path d="M12 8v5h5v-2h-3V8z"></path>
+                    <path
+                    d="M21.292 8.497a8.957 8.957 0 0 0-1.928-2.862 9.004 9.004 0 0 0-4.55-2.452 9.09 9.09 0 0 0-3.626 0 8.965 8.965 0 0 0-4.552 2.453 9.048 9.048 0 0 0-1.928 2.86A8.963 8.963 0 0 0 4 12l.001.025H2L5 16l3-3.975H6.001L6 12a6.957 6.957 0 0 1 1.195-3.913 7.066 7.066 0 0 1 1.891-1.892 7.034 7.034 0 0 1 2.503-1.054 7.003 7.003 0 0 1 8.269 5.445 7.117 7.117 0 0 1 0 2.824 6.936 6.936 0 0 1-1.054 2.503c-.25.371-.537.72-.854 1.036a7.058 7.058 0 0 1-2.225 1.501 6.98 6.98 0 0 1-1.313.408 7.117 7.117 0 0 1-2.823 0 6.957 6.957 0 0 1-2.501-1.053 7.066 7.066 0 0 1-1.037-.855l-1.414 1.414A8.985 8.985 0 0 0 13 21a9.05 9.05 0 0 0 3.503-.707 9.009 9.009 0 0 0 3.959-3.26A8.968 8.968 0 0 0 22 12a8.928 8.928 0 0 0-.708-3.503z">
+                    </path>
+                </svg>
+                <span>History</span>
+            </a>
+        }
+    </div>
+</div>
+<div class="content grid-item">
+
+    @RenderBody()
+</div>
