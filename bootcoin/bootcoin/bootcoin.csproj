@@ -115,6 +115,13 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="bootstrap\css\bootstrap.min.css" />
@@ -153,6 +160,7 @@
     <Content Include="Content\Icons\chevron-down.png" />
     <Content Include="Content\Icons\bell-icon.png" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="signup.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site1.Master" />
