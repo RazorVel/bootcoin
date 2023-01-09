@@ -1,0 +1,100 @@
+﻿.frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.frame .header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 528px;
+}
+
+.frame .header .title {
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.frame .header .intro {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.frame .form {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    gap: 40px;
+}
+
+.frame .form .data {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.frame .form .data .entry {
+    display: flex;
+    align-items: center;
+    width: 528px;
+    height: 69px;
+    padding: 0 31px;
+    gap: 30px;
+    border: 1px solid var(--auth-form-entry-border);
+    border-radius: 20px;
+}
+
+.frame .form .data .entry .mark {
+    width: 31px;
+    height: 31px;
+}
+
+.frame .form .data .entry > input {
+    flex: 1;
+    font-weight: 400;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.frame .form .data .entry > input::placeholder {
+    color: var(--auth-form-placeholder);
+}
+
+.frame .form .data .entry .feature {
+    width: 24px;
+    height: 24px;
+}
+
+.frame .form .trigger {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.frame .form .trigger .submit {
+    border: none;
+    font-weight: 600;
+    font-size: 23px;
+    width: 369px;
+    height: 56px;
+    border-radius: 30px;
+    background-color: var(--auth-form-button-back);
+    color: var(--auth-form-button-text);
+}
+
+.frame .form .trigger .redirect {
+    color: var(--auth-form-text);
+}
+
+.frame .form .trigger .redirect > a {
+    color: var(--auth-form-link);
+    font-weight: 600;
+}

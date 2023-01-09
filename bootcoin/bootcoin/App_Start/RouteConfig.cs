@@ -10,6 +10,18 @@ namespace bootcoin
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Login",
+                url: "Login/{action}",
+                defaults: new {Controller = "Login", action = "Index"}
+            );
+
+            routes.MapRoute(
+                name: "Register",
+                url: "Register/{action}",
+                defaults: new { Controller = "Register", action = "Index" }
+            );
+
+            routes.MapRoute(
                 name: "Admin",
                 url: "Admin/{action}",
                 defaults: new { controller="Admin", action = "Index" }

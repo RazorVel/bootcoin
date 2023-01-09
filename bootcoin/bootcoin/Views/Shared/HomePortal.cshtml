@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles{
+<link rel="stylesheet" type="text/css" href="~/Content/Css/HomePortal.css">
+@RenderSection("Styles", false)
+}
+
+
+<div class="hero">
+    <div class="brand left-right">
+        <img src="~/Content/Icons/site-logo.png" alt="logo">
+        <div class="top-down">
+            <span class="name">Bootcoin</span>
+            <span class="slogan">Collect bootcoin and get exclusive perks!</span>
+        </div>
+    </div>
+    <div class="nothing"></div>
+</div>
+
+<div class="form-container">
+    @RenderBody()
+</div>
