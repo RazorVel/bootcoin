@@ -14,7 +14,8 @@ namespace bootcoin
 
         }
 
-        protected void registerlink_Click(object sender, EventArgs e)
+       
+        protected void loginlink_Click(object sender, EventArgs e)
         {
             Response.Redirect("sign-in.aspx");
         }

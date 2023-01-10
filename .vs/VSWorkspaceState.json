@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bootcoin",
+    "\\bootcoin\\bootcoin",
+    "\\bootcoin\\bootcoin\\bootstrap",
+    "\\bootcoin\\bootcoin\\bootstrap\\css"
   ],
-  "SelectedNode": "\\C:\\Users\\Zefany\\Source\\Repos\\RazorVel\\bootcoin",
+  "SelectedNode": "\\bootcoin\\bootcoin\\bootstrap\\css\\customstyle.css",
   "PreviewInSolutionExplorer": false
 }

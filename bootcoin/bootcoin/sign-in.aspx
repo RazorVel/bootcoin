@@ -44,7 +44,7 @@
                               <img src="images/email-icon.png" id="email-icon"/>
                           </div>
                           <div class="input-group">
-                              <input type="text" class="form-control" placeholder="Email Address">
+                              <input type="text" class="form-control" placeholder="Email Address" required>
                             </div>
                         <br />
                           <%--Password--%>
@@ -53,7 +53,7 @@
                                   <img src="images/password-icon.png" id="password-icon"/>
                               </div>
                               <div class="input-group">
-                                   <input type="password" class="form-control" placeholder="Password" id ="password">
+                                   <input type="password" class="form-control" placeholder="Password" id ="password" required>
                               </div>
                               <div class="input-group-addon">
                                    <img src="images/password-reveal.png" id ="password-eye"/>
@@ -63,9 +63,9 @@
                           <%--signup button--%>
                           <div class ="container">
                              <div class ="center">
-                                  <button  id= "signin-button" type="button" class="btn btn-primary btn-lg">Let's Go</button>
+                                  <button  id= "signin-button" type="submit" class="btn btn-primary btn-lg">Let's Go</button>
                               </div>
-                              <p id="register" class="center">Dont have an account?<asp:LinkButton runat="server" OnClick="registerlink_Click">Register here</asp:LinkButton></p>
+                              <p id="register" class="center">Dont have an account? <asp:LinkButton runat="server" OnClick="registerlink_Click" cssclass="loginregister"> Register here</asp:LinkButton></p>
                            </div>
                            <%--facebook and google login--%>
                            <div class="center">

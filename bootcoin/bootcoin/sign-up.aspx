@@ -42,8 +42,9 @@
                               <img src="images/email-icon.png" id="email-icon"/>
                           </div>
                           <div class="input-group">
-                              <input type="text" class="form-control" placeholder="Email Address">
+                              <input type="text" class="form-control" placeholder="Email Address" id="emailTxt" onkeyup='ValidateEmail()' required >
                             </div>
+                          <span id="errorLabelEmail" style=" color:red"></span>
                         <br />
 
                           <%--Password--%>
@@ -52,11 +53,12 @@
                                   <img src="images/password-icon.png" id="password-icon"/>
                               </div>
                               <div class="input-group">
-                                   <input type="password" class="form-control" placeholder="Password" id ="password">
+                                   <input type="password" class="form-control" placeholder="Password" id ="password" required>
                               </div>
                               <div class="input-group-addon">
                                    <img src="images/password-reveal.png" id ="password-eye"/>
                               </div>  
+                             <span id="errorLabelPassword" style=" color:red"></span>
                          </div>
                           <br />
                           <%--Confirm password--%>
@@ -65,11 +67,12 @@
                                   <img src="images/password-icon.png" id="confirm-icon"/>
                               </div>
                               <div class="input-group">
-                                   <input type="password" class="form-control" placeholder="Confirm Password" id ="confirm">
+                                   <input type="password" class="form-control" placeholder="Confirm Password" id ="confirm" onkeyup='ValidateConfirmation()' required>
                               </div>
                               <div class="input-group-addon">
                                    <img src="images/password-reveal.png" id ="confirm-eye"/>
                               </div>  
+                               <span id="errorLabelConfirm" style=" color:red"></span>
                              </div>
                           </div>
 
@@ -89,9 +92,9 @@
                       <%--signup button--%>
                           <div class ="container">
                              <div class ="center">
-                                  <button  id= "signin-button" type="button" class="btn btn-primary btn-lg">Join now</button>
+                                  <button  id= "signin-button" type="submit" class="btn btn-primary btn-lg" >Join now</button>
                               </div>
-                              <p id="register" class="center">Already have an account?<asp:LinkButton runat="server" ID="registerlink" OnClick="registerlink_Click">Log in here</asp:LinkButton></p>
+                              <p id="register" class="center">Already have an account? <asp:LinkButton runat="server" ID="loginlink" OnClick="loginlink_Click" cssclass="loginregister"> Log in here</asp:LinkButton></p>
                            </div>
 
 
