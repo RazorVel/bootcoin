@@ -145,6 +145,14 @@
     <Content Include="Content\Icons\hide-show-eye.png" />
     <Content Include="Content\Icons\ui-mail.png" />
     <Content Include="Content\Icons\ui-padlock.png" />
+    <Content Include="Content\Css\TraineeHome.css" />
+    <Content Include="Content\Css\Bootstrap.min.css" />
+    <Content Include="Scripts\Popper.min.js" />
+    <Content Include="Scripts\Bootstrap.min.js" />
+    <Content Include="Content\Icons\agent-card-profile.png" />
+    <Content Include="Content\Icons\balance.png" />
+    <Content Include="Content\Icons\bootcoin-earned.png" />
+    <Content Include="Content\Icons\progress.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\Favicons\favicon.ico" />

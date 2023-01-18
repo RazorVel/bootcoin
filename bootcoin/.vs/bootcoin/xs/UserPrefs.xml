@@ -1,10 +1,21 @@
 ﻿<Properties StartupConfiguration="{A3213C37-37E3-4FBF-9F57-BB06EC192A3F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="bootcoin/Content/Css/Login.css">
+  <MonoDevelop.Ide.Workbench ActiveDocument="bootcoin/Views/Trainee/Index.cshtml">
     <Files>
       <File FileName="bootcoin/Views/Login/Index.cshtml" Line="1" Column="1" />
-      <File FileName="bootcoin/Views/Shared/Authentication.cshtml" Line="1" Column="1" />
-      <File FileName="bootcoin/Content/Css/Authentication.css" Line="1" Column="1" />
-      <File FileName="bootcoin/Content/Css/Login.css" Line="1" Column="1" />
+      <File FileName="bootcoin/Views/Shared/HomePortal.cshtml" Line="1" Column="1" />
+      <File FileName="bootcoin/Content/Css/HomePortal.css" Line="1" Column="1" />
+      <File FileName="bootcoin/Content/Css/AuthSection.css" Line="1" Column="1" />
+      <File FileName="bootcoin/Views/Shared/_Layout.cshtml" Line="19" Column="18" />
+      <File FileName="bootcoin/Views/Admin/Index.cshtml" Line="1" Column="1" />
+      <File FileName="bootcoin/Views/Admin/Teams.cshtml" Line="5" Column="29" />
+      <File FileName="bootcoin/Views/Trainee/TeamMember.cshtml" Line="11" Column="3" />
+      <File FileName="bootcoin/App_Start/RouteConfig.cs" Line="33" Column="69" />
+      <File FileName="bootcoin/Controllers/TraineeController.cs" Line="14" Column="10" />
+      <File FileName="bootcoin/Content/Css/ProfileCollage.css" Line="1" Column="1" />
+      <File FileName="bootcoin/Views/Trainee/Index.cshtml" Line="13" Column="30" />
+      <File FileName="bootcoin/Views/Trainee/Redeem.cshtml" Line="1" Column="1" />
+      <File FileName="bootcoin/Views/Trainee/History.cshtml" Line="1" Column="1" />
+      <File FileName="bootcoin/Content/Css/TraineeHome.css" Line="17" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,9 +24,7 @@
             <Node name="bootcoin" expanded="True">
               <Node name="App_Start" expanded="True" />
               <Node name="Content" expanded="True">
-                <Node name="Css" expanded="True">
-                  <Node name="Login.css" selected="True" />
-                </Node>
+                <Node name="Css" expanded="True" />
                 <Node name="Favicons" expanded="True" />
                 <Node name="Icons" expanded="True" />
                 <Node name="Images" expanded="True" />
@@ -29,7 +38,9 @@
                 <Node name="Login" expanded="True" />
                 <Node name="Register" expanded="True" />
                 <Node name="Shared" expanded="True" />
-                <Node name="Trainee" expanded="True" />
+                <Node name="Trainee" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
               </Node>
               <Node name="Global.asax" expanded="True" />
             </Node>
@@ -37,11 +48,6 @@
               <Node name="Controllers" expanded="True" />
             </Node>
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="bootcoin" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
