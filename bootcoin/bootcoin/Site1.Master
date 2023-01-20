@@ -25,8 +25,6 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <%--custom js for signin--%>
-    <script src="bootstrap/js/signinScript.js"></script>
-    <script src="bootstrap/js/signupScript.js"></script>
+    
 </body>
 </html>

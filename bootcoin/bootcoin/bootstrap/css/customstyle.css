@@ -92,6 +92,7 @@
     left: 13px;
     width: 25px;
     height: auto;
+    right: 1360px;
 }
 
 
@@ -115,9 +116,9 @@
     align-items: center;
 }
 
-#signin-button{
+.btn-lg {
+    min-width: 300px;
     width:75%;
-    border-radius:20px !important;
 }
 #register{
     margin-top: 10px;

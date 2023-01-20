@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -136,8 +137,6 @@
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\popper.min.js" />
-    <Content Include="bootstrap\js\signinScript.js" />
-    <Content Include="bootstrap\js\signupScript.js" />
     <Content Include="images\bootcoin_logo.png" />
     <Content Include="images\email-icon.png" />
     <Content Include="images\facebook.png" />

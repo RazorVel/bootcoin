@@ -42,9 +42,10 @@
                               <img src="images/email-icon.png" id="email-icon"/>
                           </div>
                           <div class="input-group">
-                              <input type="text" class="form-control" placeholder="Email Address" id="emailTxt" onkeyup='ValidateEmail()' required >
+                             
+                              <asp:TextBox ID="emailTxt" runat="server" cssclass="form-control" placeholder="Email Address" ></asp:TextBox> 
                             </div>
-                          <span id="errorLabelEmail" style=" color:red"></span>
+                          <span id="errorLabelEmail" runat="server" style=" color:red"></span>
                         <br />
 
                           <%--Password--%>
@@ -53,12 +54,12 @@
                                   <img src="images/password-icon.png" id="password-icon"/>
                               </div>
                               <div class="input-group">
-                                   <input type="password" class="form-control" placeholder="Password" id ="password" required>
+                                   <asp:TextBox ID="password" TextMode="Password" runat="server" cssclass="form-control" placeholder="Password"></asp:TextBox>
                               </div>
                               <div class="input-group-addon">
                                    <img src="images/password-reveal.png" id ="password-eye"/>
                               </div>  
-                             <span id="errorLabelPassword" style=" color:red"></span>
+                             <span id="errorLabelPassword" runat="server" style=" color:red"></span>
                          </div>
                           <br />
                           <%--Confirm password--%>
@@ -67,12 +68,13 @@
                                   <img src="images/password-icon.png" id="confirm-icon"/>
                               </div>
                               <div class="input-group">
-                                   <input type="password" class="form-control" placeholder="Confirm Password" id ="confirm" onkeyup='ValidateConfirmation()' required>
+                                  <asp:TextBox ID="confirm" TextMode="Password" runat="server" cssclass="form-control" placeholder="Confirm Password"></asp:TextBox>
+                                   
                               </div>
                               <div class="input-group-addon">
-                                   <img src="images/password-reveal.png" id ="confirm-eye"/>
+                                   <img src="images/password-reveal.png" id ="confirm-eye" />
                               </div>  
-                               <span id="errorLabelConfirm" style=" color:red"></span>
+                               <span id="errorLabelConfirm"  runat="server" style=" color:red"></span>
                              </div>
                           </div>
 
@@ -92,7 +94,7 @@
                       <%--signup button--%>
                           <div class ="container">
                              <div class ="center">
-                                  <button  id= "signin-button" type="submit" class="btn btn-primary btn-lg" >Join now</button>
+                                   <asp:LinkButton runat="server" ID="signin_button" cssclass="btn btn-primary btn-lg" OnClick="signin_button_Click">Join Now</asp:LinkButton>
                               </div>
                               <p id="register" class="center">Already have an account? <asp:LinkButton runat="server" ID="loginlink" OnClick="loginlink_Click" cssclass="loginregister"> Log in here</asp:LinkButton></p>
                            </div>
@@ -115,5 +117,119 @@
                  </div>
            </div>
       </div>
+    <script type="text/javascript">
+        let email_acc = false;
+        let confirm_acc = false;
+        var errorLabelEmail = document.getElementById('<%=errorLabelEmail.ClientID %>');
+        var errorLabelConfirm = document.getElementById('<%=errorLabelConfirm.ClientID %>');
 
+        document.getElementById('<%=signin_button.ClientID %>').addEventListener("click", prevenButtonClick, false);
+
+
+        function show(id) {
+            var pass = document.getElementById(id);
+            pass.setAttribute('type', 'text');
+
+        }
+
+        function hide(id) {
+            var pass = document.getElementById(id);
+            pass.setAttribute('type', 'password');
+        }
+
+        var pwShown = 0;
+
+        document.getElementById("password-eye").addEventListener("click", function () {
+            if (pwShown == 0) {
+                pwShown = 1;
+                show('<%=password.ClientID %>');
+            } else {
+                pwShown = 0;
+                hide('<%=password.ClientID %>');
+            }
+        }, false);
+
+        var conShown = 0;
+
+        document.getElementById("confirm-eye").addEventListener("click", function () {
+            if (conShown == 0) {
+                conShown = 1;
+                show('<%=confirm.ClientID %>');
+            } else {
+                conShown = 0;
+                hide('<%=confirm.ClientID %>');
+            }
+        }, false);
+
+        
+
+        function prevenButtonClick(event) {
+            alert("Your Password or Email is not valid");
+            event.preventDefault()
+        }
+
+        function ValidateEmail() {
+
+            var email = document.getElementById('<%=emailTxt.ClientID %>').value;
+            var emailreg = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (email == '') {
+                errorLabelEmail.innerHTML = "Email can not be empty";
+                email_acc = false;
+            }
+            else if (!emailreg.test(email)) {
+                errorLabelEmail.innerHTML = "Please enter a valid email address.";
+                email_acc = false;
+            }
+            else {
+                errorLabelEmail.innerHTML = ''
+                email_acc = true;
+            }
+
+
+            if (email_acc == true && confirm_acc == true) {
+                document.getElementById('<%=signin_button.ClientID %>').removeEventListener("click", prevenButtonClick);
+        }
+          else {
+                
+            document.getElementById('<%=signin_button.ClientID %>').addEventListener("click", prevenButtonClick);
+
+        }
+       
+        }
+
+
+        function ValidateConfirmation() {
+            var password = document.getElementById('<%=password.ClientID %>').value;
+            var confirmPass = document.getElementById('<%=confirm.ClientID %>').value;
+            
+            if (password == "" || password == undefined || password == null) {
+                errorLabelConfirm.innerHTML = "Passwords can not be empty";
+                confirm_acc = false;
+            }
+            else if (password != confirmPass) {
+                errorLabelConfirm.innerHTML = "Passwords do not match";
+                confirm_acc = false;
+            }
+            else {
+                errorLabelConfirm.innerHTML = "";
+                confirm_acc = true;
+            }
+
+            
+            
+            if (email_acc == true && confirm_acc == true) {
+                document.getElementById('<%=signin_button.ClientID %>').removeEventListener("click", prevenButtonClick);
+
+            }
+            else {
+                document.getElementById('<%=signin_button.ClientID %>').addEventListener("click", prevenButtonClick);
+
+
+            }
+
+        }
+
+
+
+    </script>
 </asp:Content>
