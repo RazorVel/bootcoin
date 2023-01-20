@@ -21,26 +21,26 @@
         default:
             break;
     }
-
-    string controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower();
+    string controller = Context.GetRouteData().Values["controller"].ToString().ToLower();
+    //string controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower();
 
     string userName = "User";
 
 }
 
 @section Styles{
-<link rel="stylesheet" href="~/Content/Css/CommonFrame.css">
-<link rel="stylesheet" href="~/Content/Css/ContentHeader.css">
+<link rel="stylesheet" href="~/css/CommonFrame.css">
+<link rel="stylesheet" href="~/css/ContentHeader.css">
 @RenderSection("Styles", false)
 }
 
 @section Scripts{
-<script src="~/Scripts/CommonFrame.js"></script>
+<script src="~/js/CommonFrame.js"></script>
 @RenderSection("Scripts", false)
 }
 
 <div class="site-logo grid-item ">
-    <img src="~/Content/Icons/site-logo.png" alt="logo">
+    <img src="~/icons/site-logo.png" alt="logo">
     <span class="">Bootcoin</span>
 </div>
 
@@ -48,17 +48,17 @@
     <div class="nav-feature">
         <div class="search">
             <input type="text" placeholder="Search">
-            <img class="" src="~/Content/Icons/search-icon.png" alt="search">
+            <img class="" src="~/icons/search-icon.png" alt="search">
         </div>
     </div>
     <div class="about-user">
         <div class="notification hover">
-            <img src="~/Content/Icons/bell-icon.png" alt="bell">
+            <img src="~/icons/bell-icon.png" alt="bell">
         </div>
         <div class="profile">
-            <img class="avatar" src="~/Content/Images/placeholder.jpg" alt="avatar">
+            <img class="avatar" src="~/images//placeholder.jpg" alt="avatar">
             <span class="comment ">Hi, @(userName)</span>
-            <img class="chevron" src="~/Content/Icons/chevron-down.png" alt="chevron">
+            <img class="chevron" src="~/icons/chevron-down.png" alt="chevron">
         </div>
     </div>
 </nav>
