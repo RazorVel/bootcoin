@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\felik\\Desktop\\bootcoin-new\\bootcoin\\bootcoin\\bootcoin.csproj": {}
+    "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\bootcoin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\felik\\Desktop\\bootcoin-new\\bootcoin\\bootcoin\\bootcoin.csproj": {
+    "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\bootcoin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\felik\\Desktop\\bootcoin-new\\bootcoin\\bootcoin\\bootcoin.csproj",
+        "projectUniqueName": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\bootcoin.csproj",
         "projectName": "bootcoin",
-        "projectPath": "C:\\Users\\felik\\Desktop\\bootcoin-new\\bootcoin\\bootcoin\\bootcoin.csproj",
+        "projectPath": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\bootcoin.csproj",
         "packagesPath": "C:\\Users\\felik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\felik\\Desktop\\bootcoin-new\\bootcoin\\bootcoin\\obj\\",
+        "outputPath": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

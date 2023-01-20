@@ -9,73 +9,73 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = bootcoin
 build_property.RootNamespace = bootcoin
-build_property.ProjectDir = C:\Users\felik\Desktop\bootcoin-new\bootcoin\bootcoin\
+build_property.ProjectDir = C:\Users\felik\Desktop\bootcoin\bootcoin\bootcoin\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\felik\Desktop\bootcoin-new\bootcoin\bootcoin
+build_property.MSBuildProjectDirectory = C:\Users\felik\Desktop\bootcoin\bootcoin\bootcoin
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Admin/Index.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Admin/Teams.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Admin/Teams.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVGVhbXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Debug/Index.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Debug/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVidWdcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Home/Index.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Login/Index.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Register/Index.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Register/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Shared/CommonFrame.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Shared/CommonFrame.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbW1vbkZyYW1lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Shared/Error.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Shared/HomePortal.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Shared/HomePortal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhvbWVQb3J0YWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Shared/_Layout.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Trainee/History.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Trainee/History.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lZVxIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Trainee/Index.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Trainee/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Trainee/Redeem.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Trainee/Redeem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lZVxSZWRlZW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/Trainee/TeamMember.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/Trainee/TeamMember.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lZVxUZWFtTWVtYmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/_ViewImports.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/felik/Desktop/bootcoin-new/bootcoin/bootcoin/Views/_ViewStart.cshtml]
+[C:/Users/felik/Desktop/bootcoin/bootcoin/bootcoin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
