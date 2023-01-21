@@ -4,3 +4,96 @@
     ViewBag.Title = "Admin - History";
     ViewBag.Active = "history";
 }
+
+@section Styles{
+<link rel="stylesheet" href="~/css/ContentHeader.css">
+<link rel="stylesheet" href="~/css/History.css">
+}
+
+@section Scripts{
+<script src="~/js/History.js"></script>
+}
+
+<div class="content-header">
+    <div class="about">
+        <span class="title">Bootcoin Transaction History</span>
+        <span class="description">Below are the overview of your bootcoin transaction history</span>
+    </div>
+    @* <div class="feature">
+        <div class="button hover">
+        <img src="~/icons/sort-icon.png" alt="sort">
+        <span>Sort By</span>
+        </div>
+        </div> *@
+</div>
+
+<table class="history">
+    <tr class="head">
+        <th>
+            <div class="legend">
+                <span class="name">Date</span>
+                <img onclick="history.sortTrigger(1);" src="~/icons/table-sort.svg" alt="sort">
+            </div>
+        </th>
+        <th>
+            <div class="legend">
+                <span class="name">Transaction type</span>
+                <img onclick="history.sortTrigger(2);" src="~/icons/table-sort.svg" alt="sort">
+            </div>
+        </th>
+        <th>
+            <div class="legend">
+                <span class="name">Transaction name</span>
+                <img onclick="history.sortTrigger(3);" src="~/icons/table-sort.svg" alt="sort">
+            </div>
+        </th>
+        <th>
+            <div class="legend">
+                <span class="name">Amount</span>
+                <img onclick="history.sortTrigger(4);" src="~/icons/table-sort.svg" alt="sort">
+            </div>
+        </th>
+        <th>
+            <div class="legend">
+                <span class="name">Balance</span>
+                <img onclick="history.sortTrigger(5);" src="~/icons/table-sort.svg" alt="sort">
+            </div>
+        </th>
+    </tr>
+    <tr class="entry">
+        <td><span>2022/12/20</span></td>
+        <td><span>Input</span></td>
+        <td><span>Reward</span></td>
+        <td class="amount green"><span>300</span></td>
+        <td class="balance"><span>900</span></td>
+    </tr>
+    <tr class="entry">
+        <td><span>2021/03/17</span></td>
+        <td><span>Redeem</span></td>
+        <td><span>Merchandise</span></td>
+        <td class="amount red"><span>200</span></td>
+        <td class="balance"><span>700</span></td>
+    </tr>
+    <tr class="entry">
+        <td><span>2022/05/17</span></td>
+        <td><span>Input</span></td>
+        <td><span>Reward</span></td>
+        <td class="amount green"><span>200</span></td>
+        <td class="balance"><span>6300</span></td>
+    </tr>
+    <tr class="entry">
+        <td><span>2021/11/25</span></td>
+        <td><span>Redeem</span></td>
+        <td><span>Merchandise</span></td>
+        <td class="amount red"><span>1000</span></td>
+        <td class="balance"><span>1100</span></td>
+    </tr>
+    <tr class="entry">
+        <td><span>2020/10/10</span></td>
+        <td><span>Input</span></td>
+        <td><span>Reward</span></td>
+        <td class="amount green"><span>400</span></td>
+        <td class="balance"><span>600</span></td>
+    </tr>
+
+</table>

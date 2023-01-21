@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Mvc.Ajax;
+using bootcoin.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+// using System.Web.Mvc;
+// using System.Web.Mvc.Ajax;
 
 namespace bootcoin.Controllers
 {
@@ -11,7 +14,7 @@ namespace bootcoin.Controllers
     {
         public ActionResult Index()
         { 
-            return View();
+            return Redirect("~/Login");
         }
     }
 }

@@ -1,0 +1,49 @@
+/* _content/bootcoin/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-phehbeq3gj] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-phehbeq3gj] {
+  color: #0077cc;
+}
+
+.btn-primary[b-phehbeq3gj] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-phehbeq3gj], .nav-pills .show > .nav-link[b-phehbeq3gj] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-phehbeq3gj] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-phehbeq3gj] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-phehbeq3gj] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-phehbeq3gj] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-phehbeq3gj] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

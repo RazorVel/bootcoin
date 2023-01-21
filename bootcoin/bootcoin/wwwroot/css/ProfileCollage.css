@@ -1,0 +1,218 @@
+.profile-collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(378px, 1fr));
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.profile-collage .container {
+    height: 343px;
+    width: 378px;
+    cursor: pointer;
+    perspective: 600px;
+}
+
+.profile-collage .container .card {
+    background-color: var(--card-background);
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 2px 4px 0 var(--card-shadow);
+    border-radius: 1px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform ease-in-out 800ms;
+}
+
+.profile-collage .container:hover .card {
+    transform: rotateY(180deg) rotateZ(180deg);
+    color: var(--card-normal);
+}
+
+.profile-collage .container .card .front,
+.profile-collage .container .card .back {
+    position: absolute;
+    width: 349px;
+    height: 313px;
+    background-color: var(--card-background);
+}
+
+.profile-collage .container .card .front {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.profile-collage .container .card .front .detail {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.profile-collage .container .card .front > img {
+    border-radius: 3px;
+    width: 100%;
+    height: 239px;
+}
+
+.profile-collage .container .card .front .detail .identity {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-collage .container .card .front .detail .identity .name {
+    font-weight: 600;
+    font-size: 24px;
+}
+.profile-collage .container .card .front .detail .identity .role {
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--card-role);
+}
+.profile-collage .container .card .front .detail .credit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+.profile-collage .container .card .front .detail .credit > img {
+    width: 24px;
+    height: 24px;
+}
+.profile-collage .container .card .front .detail .credit > span {
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--card-value);
+}
+
+.profile-collage .container .card .back {
+    transform: rotateY(180deg) rotateZ(-180deg);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    backface-visibility: hidden;
+}
+
+.profile-collage .container .card .back .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.profile-collage .container .card .back .header .name {
+    font-weight: 600;
+    font-size: 24px;
+}
+.profile-collage .container .card .back .header .credit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+.profile-collage .container .card .back .header .credit > img {
+    width: 24px;
+    height: 24px;
+}
+.profile-collage .container .card .back .header .credit > span {
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.profile-collage .container .card .back .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-collage .container .card .back .detail .attribute {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.profile-collage .container .card .back .detail .attribute .name {
+    width: 120px;
+}
+
+.profile-collage .container .card .back .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.profile-collage .container .card .back .header .name {
+    font-weight: 600;
+    font-size: 24px;
+}
+.profile-collage .container .card .back .header .credit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+.profile-collage .container .card .back .header .credit > img {
+    width: 24px;
+    height: 24px;
+}
+.profile-collage .container .card .back .header .credit > span {
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.profile-collage .container .card .back .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+}
+
+.profile-collage .container .card .back .detail .attribute {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.profile-collage .container .card .back .detail .attribute .name {
+    width: 120px;
+}
+.profile-collage .container .card .back .detail .attribute .value {
+    color: var(--card-value);
+}
+.profile-collage .container .card .back .detail .attribute .value::before {
+    content: ": ";
+}
+.profile-collage .container .card .back .detail .attribute .list {
+    list-style-position: inside;
+    list-style-type: none;
+    counter-reset: elementcounter;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    color: var(--card-value);
+}
+.profile-collage
+    .container
+    .card
+    .back
+    .detail
+    .attribute
+    .list
+    li
+    span::before {
+    content: "\00a0  "counter(elementcounter) ". ";
+    counter-increment: elementcounter;
+}
+.profile-collage
+    .container
+    .card
+    .back
+    .detail
+    .attribute
+    .list
+    li:nth-child(1)
+    span::before {
+    content: ":  " counter(elementcounter) ". ";
+    counter-increment: elementcounter;
+}

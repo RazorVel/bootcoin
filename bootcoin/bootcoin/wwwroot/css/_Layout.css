@@ -1,0 +1,72 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700;800;900&display=swap");
+
+:root {
+    font-size: 12px;
+    font-family: "Inter", sans-serif;
+
+    --logo-text-shadow: #00000080;
+    --grid-shadow-vertical: #0000000d;
+    --grid-shadow-horizontal: #00000014;
+    --content-background: #eef0f4;
+    --search-background: #f0f4f9;
+    --search-border: #a3abc05c;
+    --nav-left-active: #2a77f3;
+    --nav-left-base: #353535;
+    --nav-left-inverse: #ffffff;
+    --link-text: #000000;
+    --button-text: #ffffff;
+    --sort-button-background: #ffbd63;
+    --header-description: #686868;
+    --scrollbar-thumb: #ffbd63;
+    --card-background: #ffffff;
+    --card-shadow: #00000027;
+    --card-normal: #212121;
+    --card-role: #696969;
+    --card-value: #696969;
+    --history-table-head: #2a77f3;
+    --history-table-even: #a3abc02e;
+    --history-table-odd: #ffffff;
+    --history-text-head: #ffffff;
+    --history-text-body: #000000;
+    --history-green: #4caf50;
+    --history-red: #ff3d00;
+    --history-balance: #696969;
+    --home-portal-hero-gradient-2: #0acffe;
+    --home-portal-hero-gradient-1: #495aff;
+    --home-portal-hero-text: #ffffff;
+    --auth-form-text: #353535;
+    --auth-form-link: #2b91fe;
+    --auth-form-placeholder: #c4c4c4;
+    --auth-form-entry-border: #353535;
+    --auth-form-button-back: #2b91fe;
+    --auth-form-button-text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    -moz-user-select: none;
+    user-select: none; /* Standard syntax */
+}
+
+a {
+    color: var(--link-text);
+    text-decoration: none;
+}
+
+.hover {
+    transition: all ease-in-out 0.2s;
+}
+
+.hover:hover {
+    transform: scale(1.1);
+    transition: all ease-in-out 0.2s;
+}

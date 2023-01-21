@@ -1,14 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-
-    const string ContentFolder = "/Content/";
-    const string ImageFolder = ContentFolder + "/Images/";
-    const string IconFolder = ContentFolder + "/Icons/";
-    const string StyleFolder = ContentFolder + "/Css/";
-
-    const string ScriptFolder = "/Scripts/";
-
     string active = ViewBag.Active;
     const string ACTIVE_CLASS = "current";
 
@@ -29,49 +21,51 @@
         default:
             break;
     }
-
-    string controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower();
+    string controller = Context.GetRouteData().Values["controller"].ToString().ToLower();
+    //string controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower();
 
     string userName = "User";
 
 }
 
 @section Styles{
-<link rel="stylesheet" href="@(StyleFolder)/CommonFrame.css">
+<link rel="stylesheet" href="~/css/CommonFrame.css">
+<link rel="stylesheet" href="~/css/ContentHeader.css">
 @RenderSection("Styles", false)
 }
 
 @section Scripts{
-<script src="@(ScriptFolder)/CommonFrame.js"></script>
+<script src="~/js/CommonFrame.js"></script>
+@RenderSection("Scripts", false)
 }
 
-<div class="site-logo grid-item">
-    <img src="@(IconFolder)/site-logo.png" alt="logo">
-    <span class="prevent-select">Bootcoin</span>
+<div class="site-logo grid-item ">
+    <img src="~/icons/site-logo.png" alt="logo">
+    <span class="">Bootcoin</span>
 </div>
 
-<nav class="nav-top grid-item">
+<nav class="nav-top grid-item ">
     <div class="nav-feature">
         <div class="search">
             <input type="text" placeholder="Search">
-            <img src="@(IconFolder)/search-icon.png" alt="search">
+            <img class="" src="~/icons/search-icon.png" alt="search">
         </div>
     </div>
     <div class="about-user">
-        <div class="notification">
-            <img src="@(IconFolder)/bell-icon.png" alt="bell">
+        <div class="notification hover">
+            <img src="~/icons/bell-icon.png" alt="bell">
         </div>
         <div class="profile">
-            <img class="avatar" src="@(ImageFolder)/placeholder.jpg" alt="avatar">
-            <span class="comment prevent-select">Hi, @(userName)</span>
-            <img class="chevron" src="@(IconFolder)/chevron-down.png" alt="chevron">
+            <img class="avatar" src="~/images//placeholder.jpg" alt="avatar">
+            <span class="comment ">Hi, @(userName)</span>
+            <img class="chevron" src="~/icons/chevron-down.png" alt="chevron">
         </div>
     </div>
 </nav>
 
 <div class="nav-left grid-item">
-    <div class="hierarchy">
-        <a href="/@(controller)/" class="menu-0 @(ViewBag.ActiveHome)">
+    <div class="hierarchy ">
+        <a href="/@(controller)/" class="menu-0 @(ViewBag.ActiveHome) hover">
             <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 24 24"
                 style="transform: ;msFilter:;">
                 <path
@@ -80,7 +74,8 @@
             </svg>
             <span>Home</span>
         </a>
-        <a href="/@(controller)/@(controller == "admin" ? "teams" : (controller == "trainee" ? "teammember" : "error"))/" class="menu-0 @(ViewBag.ActiveTeam)">
+        <a href="/@(controller)/@(controller == "admin" ? "teams" : (controller == "trainee" ? "teammember" : "error"))/"
+            class="menu-0 @(ViewBag.ActiveTeam) hover">
             <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 24 24"
                 style="transform: ;msFilter:;">
                 <path
@@ -94,7 +89,7 @@
         </a>
         @if (controller == "trainee")
         {
-            <a href="/trainee/redeem/" class="menu-0 @(ViewBag.ActiveRedeem)">
+            <a href="/trainee/redeem/" class="menu-0 @(ViewBag.ActiveRedeem) hover">
                 <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 24 24"
                 style="transform: ;msFilter:;">
                     <path
@@ -105,7 +100,7 @@
                 </svg>
                 <span>Redeem</span>
             </a>
-            <a href="/trainee/history/" class="menu-0 @(ViewBag.ActiveHistory)">
+            <a href="/trainee/history/" class="menu-0 @(ViewBag.ActiveHistory) hover">
                 <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 24 24"
                 style="transform: ;msFilter:;">
                     <path d="M12 8v5h5v-2h-3V8z"></path>
@@ -118,7 +113,7 @@
         }
     </div>
 </div>
-<div class="content grid-item">
 
+<div class=" content grid-item">
     @RenderBody()
 </div>
