@@ -30,36 +30,35 @@ namespace bootcoin
             
             try
             {
+                
                 SqlConnection con = new SqlConnection(strcon);
                 //check database connection
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("SELECT * FROM user WHERE email='"+ emailTxt.Text.Trim() + "' AND password='"+ password.Text.Trim() + "'", con);
-                
-
-
-
-
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [user] WHERE email='"+ emailTxt.Text.Trim() + "' AND password='"+ password.Text.Trim() + "'", con);
                 SqlDataReader dr = cmd.ExecuteReader();
+                
                 if (dr.HasRows)
                 {
-                    while (dr.Read())
-                    {
-                        Response.Write("<script>alert('Sign up successful. Go to User Login to login');</script>");
-                    }
+                    dr.Close();
+                    Response.Write("<script>alert('Sign up successful. Go to User Login to login');</script>");
+                        
+                    
                 }
                 else
                 {
+                    dr.Close();
                     Response.Write("<script>alert('Your Password and Email is either not registered or incorrect');</script>");
                 }
-
+                
                 //cmd.ExecuteNonQuery();
                 //con.Close();
-                Response.Write("<script>alert('Sign up successful. Go to User Login to login');</script>");
+                
                 emailTxt.Text = string.Empty;
                 password.Text = string.Empty;
+
             }
             catch (Exception ex)
             {

@@ -66,7 +66,7 @@
                           <%--signup button--%>
                           <div class ="container">
                              <div class ="center">
-                                   <asp:LinkButton runat="server" ID="signin_button" cssclass="btn btn-primary btn-lg" OnClick="signin_button_Click" OnClientClick="return ButtonAlert">Let's Go</asp:LinkButton>
+                                   <asp:LinkButton runat="server" ID="signin_button" cssclass="btn btn-primary btn-lg" OnClick="signin_button_Click" >Let's Go</asp:LinkButton>
                               </div>
                               <p id="register" class="center">Dont have an account? <asp:LinkButton runat="server" OnClick="registerlink_Click" cssclass="loginregister"> Register here</asp:LinkButton></p>
                            </div>
@@ -96,8 +96,8 @@
         document.getElementById('<%=signin_button.ClientID %>').addEventListener("click", prevenButtonClick, false);
 
         function prevenButtonClick(event) {
-          //  alert("Your Password or Email is not valid");
-           // event.preventDefault();
+            alert("Your Password or Email is not valid");
+            event.preventDefault();
 
         }
 
