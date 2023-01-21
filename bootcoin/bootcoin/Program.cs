@@ -1,7 +1,12 @@
+using bootcoin.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<BootcoinDbContext>(options => 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BootcoinConnectionString")));
 
 var app = builder.Build();
 
