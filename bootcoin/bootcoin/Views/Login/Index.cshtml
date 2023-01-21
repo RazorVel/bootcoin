@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Bootcoin - Login";
     Layout = "~/Views/Shared/HomePortal.cshtml";
 }
@@ -7,22 +8,41 @@
 <link rel="stylesheet" href="~/css/AuthSection.css">
 }
 
+@section Scripts{
+    <script>
+        var pwShown = 0;
+        function showPassword(id) {
+            if (pwShown == 0) {
+                pwShown = 1;
+                document.getElementById(id).type = 'text';
+            } else {
+                pwShown = 0;
+                document.getElementById(id).type = 'password';
+            }
+        }
+
+    </script>
+
+
+}
+
 <div class="frame">
     <div class="header">
         <h1 class="title">Hello, Welcome back to Bootcoin!</h1>
         <span class="intro">Before we get started, please sign in using your email address and password</span>
+
     </div>
 
     <form class="form" action="">
         <div class="data">
             <div class="entry">
                 <img class="mark" src="~/icons/ui-mail.png" alt="mail">
-                <input type="email" name="email" placeholder="Email address">
+                <input type="email" name="email" placeholder="Email address" required>
             </div>
             <div class="entry">
                 <img class="mark" src="~/icons/ui-padlock.png" alt="padlock">
-                <input type="password" name="password" placeholder="Password">
-                <img class="feature" src="~/icons/hide-show-eye.png" alt="eye">
+                <input type="password" name="password" placeholder="Password" id="password" required>
+                <img class="feature" src="~/icons/hide-show-eye.png" alt="eye" onclick="showPassword('password')">
             </div>
         </div>
         <div class="trigger">

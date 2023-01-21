@@ -6,7 +6,11 @@
 <link rel="stylesheet" type="text/css" href="~/css/HomePortal.css">
 @RenderSection("Styles", false)
 }
-
+@section Scripts{
+       <script></script>
+    @RenderSection("scripts", required: false)
+    
+}
 
 <div class="hero">
     <div class="brand left-right">

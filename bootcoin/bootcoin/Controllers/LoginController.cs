@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using bootcoin.Models;
+using bootcoin.Models.Domain;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 // using System.Web;
@@ -15,5 +16,7 @@ namespace bootcoin.Controllers
         {
             return View ();
         }
+
+        
     }
 }

@@ -2,10 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\bootcoin",
-    "\\bootcoin\\bootcoin",
     "\\bootcoin\\bootcoin\\bootstrap",
-    "\\bootcoin\\bootcoin\\bootstrap\\css"
+    "\\bootcoin\\bootcoin\\bootstrap\\css",
+    "\\bootcoin\\bootcoin\\Controllers",
+    "\\bootcoin\\bootcoin\\Views",
+    "\\bootcoin\\bootcoin\\Views\\Login",
+    "\\bootcoin\\bootcoin\\Views\\Shared"
   ],
-  "SelectedNode": "\\bootcoin\\bootcoin\\bootstrap\\css\\customstyle.css",
+  "SelectedNode": "\\bootcoin\\bootcoin.sln",
   "PreviewInSolutionExplorer": false
 }

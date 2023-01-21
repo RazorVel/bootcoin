@@ -6,6 +6,37 @@
 @section Styles{
 <link rel="stylesheet" href="~/css/AuthSection.css">
 }
+@section Scripts{
+    <script>
+     var password = document.getElementById("password")
+      , confirm_password = document.getElementById("confirm_password");
+
+    function validatePassword(){
+      if(confirm_password.value!='' && password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+        confirm_password.setCustomValidity('');
+      }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+
+    var pwShown = 0;
+    function showPassword(id){
+            if (pwShown == 0) {
+                pwShown = 1;
+                document.getElementById(id).type = 'text';
+            } else {
+                pwShown = 0;
+                document.getElementById(id).type = 'password';
+            }
+    }
+
+    </script>
+    
+
+}
 
 <div class="frame">
     <div class="header">
@@ -17,17 +48,17 @@
         <div class="data">
             <div class="entry">
                 <img class="mark" src="~/icons/ui-mail.png" alt="mail">
-                <input type="email" name="email" placeholder="Email address">
+                <input type="email" name="email" placeholder="Email address" required>
             </div>
             <div class="entry">
                 <img class="mark" src="~/icons/ui-padlock.png" alt="padlock">
-                <input type="password" name="password" placeholder="Password">
-                <img class="feature" src="~/icons/hide-show-eye.png" alt="eye">
+                <input type="password" name="password" placeholder="Password" id = "password" required>
+                <img class="feature" src="~/icons/hide-show-eye.png" alt="eye" onclick="showPassword('password')">
             </div>
             <div class="entry">
                 <img class="mark" src="~/icons/ui-padlock.png" alt="padlock">
-                <input type="password" name="confirm-password" placeholder="Confirm password">
-                <img class="feature" src="~/icons/hide-show-eye.png" alt="eye">
+                <input type="password" name="confirm-password" placeholder="Confirm password" id="confirm_password" required>
+                <img class="feature" src="~/icons/hide-show-eye.png" alt="eye"  onclick="showPassword('confirm_password')">
             </div>
         </div>
         <div class="trigger">
