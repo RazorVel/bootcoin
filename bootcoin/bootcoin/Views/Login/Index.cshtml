@@ -1,5 +1,6 @@
-﻿
+﻿@model bootcoin.Models.Domain.User
 @{
+    ViewData["Title"] = "Index";
     ViewBag.Title = "Bootcoin - Login";
     Layout = "~/Views/Shared/HomePortal.cshtml";
 }
@@ -22,7 +23,9 @@
         }
 
     </script>
-
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 
 }
 
@@ -33,7 +36,7 @@
 
     </div>
 
-    <form class="form" action="">
+    <form class="form" asp-action="Index">
         <div class="data">
             <div class="entry">
                 <img class="mark" src="~/icons/ui-mail.png" alt="mail">
@@ -46,6 +49,13 @@
             </div>
         </div>
         <div class="trigger">
+            @if (TempData["AlertMessage"] == "User Is Not Registered!")
+            {
+                <div style="color:red">
+                    <strong>@TempData["AlertMessage"]</strong>
+                </div>
+            }
+            
             <input class="submit" type="submit" value="Let's Go">
             <span class="redirect">Don't have an account? <a href="/Register/">Register here</a></span>
         </div>
