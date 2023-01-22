@@ -1,4 +1,7 @@
-﻿@{
+﻿
+@model bootcoin.Models.Domain.User
+@{
+    ViewData["Title"] = "Index";
     ViewBag.Title = "Bootcoin - Sign Up";
     Layout = "~/Views/Shared/HomePortal.cshtml";
 }
@@ -32,10 +35,11 @@
                 document.getElementById(id).type = 'password';
             }
     }
+   
 
     </script>
     
-
+     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
 
 <div class="frame">
@@ -44,7 +48,7 @@
         <span class="intro">To join the community, please register yourself by completing fields below...</span>
     </div>
 
-    <form class="form" action="">
+    <form class="form" asp-action="Index">
         <div class="data">
             <div class="entry">
                 <img class="mark" src="~/icons/ui-mail.png" alt="mail">
@@ -52,18 +56,39 @@
             </div>
             <div class="entry">
                 <img class="mark" src="~/icons/ui-padlock.png" alt="padlock">
-                <input type="password" name="password" placeholder="Password" id = "password" required>
+                <input type="password" name="password" placeholder="Password" id="password" required>
                 <img class="feature" src="~/icons/hide-show-eye.png" alt="eye" onclick="showPassword('password')">
             </div>
             <div class="entry">
                 <img class="mark" src="~/icons/ui-padlock.png" alt="padlock">
                 <input type="password" name="confirm-password" placeholder="Confirm password" id="confirm_password" required>
-                <img class="feature" src="~/icons/hide-show-eye.png" alt="eye"  onclick="showPassword('confirm_password')">
+                <img class="feature" src="~/icons/hide-show-eye.png" alt="eye" onclick="showPassword('confirm_password')">
             </div>
         </div>
         <div class="trigger">
+
+            @if (TempData["AlertMessage"] == "User Already Exist!")
+            {
+                <div style="color:red">
+                    <strong>@TempData["AlertMessage"]</strong>
+                </div>
+            }
+            else if (TempData["AlertMessage"] == "Registration successful, please sign in")
+            {
+                <div style="color:green">
+                    <strong>@TempData["AlertMessage"]</strong>
+                </div>
+            }
+
             <input class="submit" type="submit" value="Join now">
             <span class="redirect">Already have an account? <a href="/Login/">Log in here</a></span>
         </div>
     </form>
 </div>
+
+
+
+
+
+
+

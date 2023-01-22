@@ -5,18 +5,20 @@ using bootcoin.Models;
 using bootcoin.Models.Domain;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Identity;
 // using System.Web;
 // using System.Web.Mvc;
-
 namespace bootcoin.Controllers
 {
     public class LoginController : Controller
     {
+       
         public ActionResult Index()
-        {
+        {            
             return View ();
         }
-
+        
+      
         
     }
 }
