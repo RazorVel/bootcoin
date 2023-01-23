@@ -24,7 +24,8 @@
     string controller = Context.GetRouteData().Values["controller"].ToString().ToLower();
     //string controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower();
 
-    string userName = "User";
+    //string userName = "User";
+    string userName = ViewBag.CurrentName;
 
 }
 
@@ -57,7 +58,7 @@
         </div>
         <div class="profile">
             <img class="avatar" src="~/images//placeholder.jpg" alt="avatar">
-            <span class="comment ">Hi, @(userName)</span>
+            <span class="comment ">Hi, @(ViewBag.Name)</span>
             <img class="chevron" src="~/icons/chevron-down.png" alt="chevron">
         </div>
     </div>

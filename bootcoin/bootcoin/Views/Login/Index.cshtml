@@ -1,4 +1,6 @@
-﻿@{
+﻿@model bootcoin.Models.Login.ViewModel
+
+@{
     ViewBag.Title = "Bootcoin - Login";
     Layout = "~/Views/Shared/HomePortal.cshtml";
 }
@@ -7,21 +9,28 @@
 <link rel="stylesheet" href="~/css/AuthSection.css">
 }
 
+@section Scripts {
+    @if (ViewBag.Error != null)
+    {
+        <script>alert("@ViewBag.Error");</script>
+    }
+}
+
 <div class="frame">
     <div class="header">
         <h1 class="title">Hello, Welcome back to Bootcoin!</h1>
         <span class="intro">Before we get started, please sign in using your email address and password</span>
     </div>
 
-    <form class="form" action="">
+    <form class="form" method="post">
         <div class="data">
             <div class="entry">
                 <img class="mark" src="~/icons/ui-mail.png" alt="mail">
-                <input type="email" name="email" placeholder="Email address">
+                <input required type="email" name="email" placeholder="Email address" asp-for="Email">
             </div>
             <div class="entry">
                 <img class="mark" src="~/icons/ui-padlock.png" alt="padlock">
-                <input type="password" name="password" placeholder="Password">
+                <input required type="password" name="password" placeholder="Password" asp-for="Password">
                 <img class="feature" src="~/icons/hide-show-eye.png" alt="eye">
             </div>
         </div>
