@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G7+DozYF2tNUSvP5F76ENCyRfrIZE3ncjefuCyRWcjQ=",
+  "Hash": "RKUlid0zWxh1a6FAdWWWhcJKcr229zFN4gyaCUvgsso=",
   "Source": "bootcoin",
   "BasePath": "_content/bootcoin",
   "Mode": "Default",
@@ -593,6 +593,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\icons\\ui-padlock.png"
+    },
+    {
+      "Identity": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\icons\\ui-type.png",
+      "SourceId": "bootcoin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\",
+      "BasePath": "_content/bootcoin",
+      "RelativePath": "icons/ui-type.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\icons\\ui-type.png"
     },
     {
       "Identity": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\images\\bootcoin-vault.png",

@@ -137,6 +137,10 @@
       "PackagePath": "staticwebassets\\icons\\ui-padlock.png"
     },
     {
+      "Id": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\icons\\ui-type.png",
+      "PackagePath": "staticwebassets\\icons\\ui-type.png"
+    },
+    {
       "Id": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\images\\bootcoin-vault.png",
       "PackagePath": "staticwebassets\\images\\bootcoin-vault.png"
     },
