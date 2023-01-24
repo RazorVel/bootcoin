@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using bootcoin.Helper;
+using Microsoft.AspNetCore.Http;
 // using System.Web;
 // using System.Web.Mvc;
 namespace bootcoin.Controllers
@@ -38,10 +39,25 @@ namespace bootcoin.Controllers
             bool userExists = _helper.UserAlreadyExists(UserExistsQuery);
             if (userExists)
             {
-                return RedirectToAction("Teams", "Admin");
+                string RoleQuery = $"Select * from Users where Email='{userRegister.Email}' and Password ='{userRegister.Password}' and Role = 'Admin'";
+                bool role = _helper.UserAlreadyExists(RoleQuery);
+                
+                HttpContext.Session.SetString("Email", userRegister.Email);
+                HttpContext.Session.SetString("Password", userRegister.Password);
+                if (role)
+                {
+                    HttpContext.Session.SetString("Role", "Admin");
+                    return RedirectToAction("Teams", "Admin");
+                }
+                else
+                {
+                    HttpContext.Session.SetString("Role", "Participant");
+                    return RedirectToAction("TeamMember", "Trainee");
+                }
             }
             else
             {
+
                 TempData["AlertMessage"] = "User Is Not Registered!";
                 return View();
             }
