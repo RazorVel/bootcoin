@@ -60,6 +60,7 @@ namespace bootcoin.Controllers
 
                 if (email == null || email != user.Email)
                 {
+                    HttpContext.Session.SetString("UserId", user.UserId.ToString());
                     HttpContext.Session.SetString("Email", user.Email);
                     HttpContext.Session.SetString("Name", user.Name);
                     HttpContext.Session.SetString("Role", user.Role);

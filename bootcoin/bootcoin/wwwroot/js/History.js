@@ -37,6 +37,13 @@
         _columns.push(column.textContent);
       });
 
+        let _amount = row.querySelector("td.amount");
+
+        if (_amount.classList.contains("red"))
+            _columns.push("red");
+        else
+            _columns.push("green");
+
       _entries.push(_columns);
     });
 
@@ -47,14 +54,21 @@
     let _rowDOM = document.querySelectorAll(".history .entry");
 
     _rowDOM.forEach((row) => {
-      let _columns = entries.shift();
+        let _columns = entries.shift();
 
       let _columnDOM = row.querySelectorAll("td");
 
-      _columnDOM.forEach((column) => {
-        column = column.querySelector("span");
-        column.textContent = _columns.shift();
-      });
+        let _color = _columns.pop();
+
+        _columnDOM.forEach((column) => {
+            column = column.querySelector("span");
+            column.textContent = _columns.shift();
+        });
+
+        let _amount = row.querySelector("td.amount");
+        _amount.classList.remove("red");
+        _amount.classList.remove("green");
+        _amount.classList.add(_color);
     });
   },
 

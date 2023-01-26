@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<bootcoin.Models.Trainee.HistoryViewModel>
+
+@{
     Layout = "~/Views/Shared/CommonFrame.cshtml";
 
     ViewBag.Title = "Admin - History";
@@ -60,7 +62,19 @@
             </div>
         </th>
     </tr>
+
+    @foreach(var record in Model)
+    {
     <tr class="entry">
+        <td><span>@record.Date.ToString("yyyy/MM/dd")</span></td>
+        <td><span>@record.Type</span></td>
+        <td><span>@((record.Type == "Input") ? "Reward" : "Merchandise")</span></td>
+        <td class="amount @((record.Amount < 0) ? "red" : "green")"><span>@record.Amount</span></td>
+        <td class="balance"><span>@record.BalanceAfter</span></td>
+    </tr>
+    }
+
+    @*<tr class="entry">
         <td><span>2022/12/20</span></td>
         <td><span>Input</span></td>
         <td><span>Reward</span></td>
@@ -94,6 +108,6 @@
         <td><span>Reward</span></td>
         <td class="amount green"><span>400</span></td>
         <td class="balance"><span>600</span></td>
-    </tr>
+    </tr>*@
 
 </table>
