@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<bootcoin.Models.Trainee.TeamMemberViewModel>
+
+@{
     Layout = "~/Views/Shared/CommonFrame.cshtml";
 
     ViewBag.Title = "Admin - Team Members";
@@ -20,7 +22,71 @@
 </div>
 
 <div class="profile-collage">
-    <div class="container prevent-select">
+        @foreach(var person in Model)
+        {
+        <div class="container prevent-select">
+            <div class="card">
+                <div class="front">
+                    <img src="https://source.unsplash.com/random/349x239?v=1" alt="profile picture">
+                    <div class="detail">
+                        <div class="identity">
+                            <span class="name">@person.Name</span>
+                            <span class="role">@person.Role</span>
+                        </div>
+                        <div class="credit">
+                            <img src="~/icons/site-logo.png" alt="">
+                            <span class="value">@person.Balance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="header">
+                        <span class="name" n>@person.Name</span>
+                        <div class="credit">
+                            <img src="~/icons/site-logo.png" alt="">
+                            <span class="value">@person.Balance</span>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="attribute">
+                            <span class="name">Role</span>
+                            <span class="value">@person.Role</span>
+                        </div>
+                        <div class="attribute">
+                            <span class="name">Career Path</span>
+                            <span class="value">@person.Department</span>
+                        </div>
+                        <div class="attribute">
+                            <span class="name">MBTI</span>
+                            <span class="value">@person.Mbti</span>
+                        </div>
+                        <div class="attribute">
+                            <span class="name">Zodiac</span>
+                            <span class="value">@person.Zodiac</span>
+                        </div>
+                        <div class="attribute">
+                            <span class="name">Favorite Food</span>
+                            <span class="value">@person.FavoriteFood</span>
+                        </div>
+                        <div class="attribute">
+                            <span class="name">3 Fun Fact</span>
+                            <ol type="1" class="list">
+                                @if (person.FunFact != null)
+                                {
+                                    @foreach (var fact in person.FunFact.Split(";"))
+                                    {
+                                        <li><span>@fact</span></li>
+                                    }
+                                }
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+
+    @*<div class="container prevent-select">
         <div class="card">
             <div class="front">
                 <img src="https://source.unsplash.com/random/349x239?v=1" alt="profile picture">
@@ -467,5 +533,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
 </div>
