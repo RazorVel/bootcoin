@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RKUlid0zWxh1a6FAdWWWhcJKcr229zFN4gyaCUvgsso=",
+  "Hash": "WqR6F9tHXOjU5vCNLRGq+zbYdAOnZM186sh5S15gEB8=",
   "Source": "bootcoin",
   "BasePath": "_content/bootcoin",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\ProfileCollage.css"
+    },
+    {
+      "Identity": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\css\\Redeem.css",
+      "SourceId": "bootcoin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\",
+      "BasePath": "_content/bootcoin",
+      "RelativePath": "css/Redeem.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Redeem.css"
     },
     {
       "Identity": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\css\\TraineeHome.css",

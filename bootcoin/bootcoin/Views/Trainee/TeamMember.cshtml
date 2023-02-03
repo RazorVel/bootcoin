@@ -22,12 +22,17 @@
 </div>
 
 <div class="profile-collage">
-        @foreach(var person in Model)
-        {
+    @{
+    var count = 0; 
+    }
+    @foreach(var person in Model)
+    {
+        count+=1;
+        
         <div class="container prevent-select">
             <div class="card">
                 <div class="front">
-                    <img src="https://source.unsplash.com/random/349x239?v=1" alt="profile picture">
+                    <img src="https://source.unsplash.com/random/349x239?v=@count" alt="profile picture">
                     <div class="detail">
                         <div class="identity">
                             <span class="name">@person.Name</span>
@@ -84,7 +89,7 @@
                 </div>
             </div>
         </div>
-        }
+    }
 
     @*<div class="container prevent-select">
         <div class="card">

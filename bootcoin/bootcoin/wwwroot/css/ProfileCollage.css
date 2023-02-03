@@ -188,7 +188,7 @@
     list-style-position: inside;
     list-style-type: none;
     counter-reset: elementcounter;
-    text-align: right;
+    text-align: left;
     display: flex;
     flex-direction: column;
     gap: 3px;
