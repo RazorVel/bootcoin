@@ -45,6 +45,7 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     grid-area: nav-top;
     padding: 0 50px;
+    position: relative;
 }
 
 .nav-top .nav-feature .search {
@@ -98,10 +99,113 @@ body::-webkit-scrollbar {
     font-weight: 600;
     font-size: 16px;
     text-decoration: underline;
+    text-transform: capitalize;
 }
 .nav-top .about-user .profile .chevron {
     width: 29px;
     height: 29px;
+    transition: 0.2s transform ease-in-out;
+}
+
+.nav-top .overlay-blur{
+    width: 100%;
+    height: 100vh;
+    top: 100%;
+    left: 0;
+    position: absolute;
+    background-color: var(--overlay-blur);
+    z-index: 1;
+    display: none;
+}
+
+.nav-top .overlay-blur.active{
+    display: initial;
+}
+
+.nav-top .dropdown-menu {
+    width: 312px;
+    height: 140px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--nav-top-dropdown-menu);
+    box-shadow: 0 2px 4px 0 var(--nav-top-dropdown-menu-shadow);
+    z-index: 2;
+}
+
+.nav-top .dropdown-menu.active{
+    display: grid;
+    grid-template:
+        "avatar identity" auto
+        "avatar edit" auto
+        "feature feature" 25px / 80px 232px;
+}
+
+.nav-top .dropdown-menu > img{
+    position: relative;
+    margin: auto;
+    grid-area: avatar;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.nav-top .dropdown-menu .identity{
+    grid-area: identity;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 2px;
+}
+
+.nav-top .dropdown-menu .identity .name{
+    font-size: 16px;
+    font-weight: 600;
+    text-transform:capitalize;
+}
+
+.nav-top .dropdown-menu .identity .role{
+    font-size: 14px;
+    font-weight: 300;
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+.nav-top .dropdown-menu .edit-trigger{
+    grid-area: edit;
+    margin-top: 2px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.nav-top .dropdown-menu .edit-trigger > u{
+    cursor: pointer;
+}
+
+.nav-top .dropdown-menu .edit-trigger:after {
+    content: "🖉";
+    margin-left: 5px;
+}
+
+.nav-top .dropdown-menu .feature{
+    border-top: 1px solid var(--nav-top-dropdown-menu-border);
+    grid-area: feature;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-top .dropdown-menu .feature > a {
+    color: var(--nav-top-dropdown-menu-feature);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+    position: relative;
+    margin: auto;
+    
+    text-align: center;
 }
 
 .nav-left {

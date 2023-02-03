@@ -40,6 +40,8 @@
 @RenderSection("Scripts", false)
 }
 
+
+
 <div class="site-logo grid-item ">
     <img src="~/icons/site-logo.png" alt="logo">
     <span class="">Bootcoin</span>
@@ -62,6 +64,20 @@
             <img class="chevron" src="~/icons/chevron-down.png" alt="chevron">
         </div>
     </div>
+    <div class="dropdown-menu">
+        <img src="~/images//placeholder.jpg" alt="avatar" />
+        <div class="identity">
+            <span class="name">@(ViewBag.Name)</span>
+            <span class="role">@(ViewBag.Role)</span>
+        </div>
+        <span class="edit-trigger">
+            <u>Edit Profile</u>
+        </span>
+        <div class="feature">
+            <a href="/logout">Log out</a>
+        </div>
+    </div>
+    <div class="overlay-blur"></div>
 </nav>
 
 <div class="nav-left grid-item">

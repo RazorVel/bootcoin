@@ -3,13 +3,19 @@
 :root {
     font-size: 12px;
     font-family: "Inter", sans-serif;
-
+    --debug-soft: #ffe9e9;
+    --overlay-blur: #454444b8;
+    --debug-hard: #ff0000;
     --logo-text-shadow: #00000080;
     --grid-shadow-vertical: #0000000d;
     --grid-shadow-horizontal: #00000014;
     --content-background: #eef0f4;
     --search-background: #f0f4f9;
     --search-border: #a3abc05c;
+    --nav-top-dropdown-menu: #ffffff;
+    --nav-top-dropdown-menu-feature: #2A77F3;
+    --nav-top-dropdown-menu-border: #686868;
+    --nav-top-dropdown-menu-shadow: #0000000c;
     --nav-left-active: #2a77f3;
     --nav-left-base: #353535;
     --nav-left-inverse: #ffffff;
