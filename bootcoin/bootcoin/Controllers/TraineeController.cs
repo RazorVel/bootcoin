@@ -172,5 +172,31 @@ namespace bootcoin.Controllers
 
             return View("~/Views/Trainee/History.cshtml", models);
         }
+
+        public async Task<IActionResult> updateProfile()
+        {
+            var userId = HttpContext.Session.GetString("UserId");
+            var profile = await bootcoinDbContext.Profiles.FirstOrDefaultAsync(x => x.UserId.ToString() == userId);
+
+            if(profile != null)
+            {
+                profile.Department = Request.Form["department"];
+                profile.Mbti = Request.Form["mbti"];
+                profile.Zodiac = Request.Form["zodiac"];
+                profile.FavoriteFood = Request.Form["favorite-food"];
+
+                string[] funFacts = { 
+                    Request.Form["fun-fact-1"],
+                    Request.Form["fun-fact-2"],
+                    Request.Form["fun-fact-3"]
+                };
+
+                profile.FunFact = String.Join(";", funFacts);
+
+                await bootcoinDbContext.SaveChangesAsync();
+            }
+
+            return Redirect(Request.Headers["Referer"].ToString());
+        }
     }
 }
