@@ -5,6 +5,7 @@ using bootcoin.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using bootcoin.Data;
+using Microsoft.EntityFrameworkCore;
 // using System.Web;
 // using System.Web.Mvc;
 
@@ -19,13 +20,23 @@ namespace bootcoin.Controllers
             this.bootcoinDbContext = bootcoinDbContext;
         }
 
-        public void SessionStart()
+        public async Task<IActionResult> SessionStart()
         {
             ViewBag.Name = HttpContext.Session.GetString("Name");
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Role = HttpContext.Session.GetString("Role");
             ViewBag.UserId = HttpContext.Session.GetString("UserId");
 
+            var userId = HttpContext.Session.GetString("UserId");
+            var profiles = await bootcoinDbContext.Profiles.FirstOrDefaultAsync((x => x.UserId.ToString() == userId));
+
+            ViewBag.Department = profiles.Department;
+            ViewBag.Mbti = profiles.Mbti;
+            ViewBag.Zodiac = profiles.Zodiac;
+            ViewBag.FavoriteFood = profiles.FavoriteFood;
+            ViewBag.FunFact = profiles.FunFact;
+
+            return null;
         }
 
         public IActionResult View()
@@ -53,15 +64,15 @@ namespace bootcoin.Controllers
                 return Redirect("/Logout");
 
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            SessionStart();
+            await SessionStart();
 
             return View();
         }
-        public IActionResult Teams()
+        public async Task<IActionResult> Teams()
         {
-            SessionStart();
+            await SessionStart();
 
             return View("~/Views/Admin/Teams.cshtml");
         }

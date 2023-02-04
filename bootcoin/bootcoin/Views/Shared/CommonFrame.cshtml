@@ -77,6 +77,59 @@
             <a href="/logout">Log out</a>
         </div>
     </div>
+    <div class="update-profile">
+        <div class="identity">
+            <img src="~/images/placeholder.jpg" alt="avatar">
+            <span class="name">@(ViewBag.Name)</span>
+        </div>
+        <form action="">
+            <div class="entry">
+                <label for="role">Role</label>
+                <input id="role" type="text" value="@(ViewBag.Role)" disabled>
+            </div>
+
+            <div class="entry">
+                <label for="department">Career Path</label>
+                <input id="department" type="text" value="@(ViewBag.Department)">
+            </div>
+
+            <div class="entry">
+                <label for="mbti">MBTI</label>
+                <input id="mbti" type="text" value="@(ViewBag.Mbti)" />
+            </div>
+
+            <div class="entry">
+                <label for="zodiac">Zodiac</label>
+                <input id="zodiac" type="text" value="@(ViewBag.Zodiac)" />
+            </div>
+
+            <div class="entry">
+                <label for="favorite-food">Favorite Food</label>
+                <input id="favorite-food" type="text" value="@(ViewBag.FavoriteFood)" />
+            </div>
+
+            <div class="entry">
+                <label for="fun-fact">3 Fun Facts</label>
+                <div id="fun-fact" class="list">
+                    @{
+                        string[] list = new string[3];
+                        list = ViewBag.FunFact.Split(";");
+                    }
+                    @foreach(var item in list)
+                    {
+                        <input type="text" value="@item"/>
+                    }
+                    @for(int i=0; i<3-list.Length; i++)
+                    {
+                        <input type="text" value="">
+                    }
+                </div>  
+            </div>
+
+            <input type="submit" class="submit" value="Update" />
+                
+        </form>
+    </div>
     <div class="overlay-blur"></div>
 </nav>
 

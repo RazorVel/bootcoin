@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using bootcoin.Data;
 using bootcoin.Models.Domain;
 using bootcoin.Models.Trainee;
+using Microsoft.Identity.Client;
 // using System.Web.Mvc;
 
 namespace bootcoin.Controllers
@@ -22,13 +23,23 @@ namespace bootcoin.Controllers
             this.bootcoinDbContext = bootcoinDbContext;
         }
 
-        public void SessionStart()
+        public async Task<IActionResult> SessionStart()
         {
             ViewBag.Name = HttpContext.Session.GetString("Name");
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Role = HttpContext.Session.GetString("Role");
             ViewBag.UserId = HttpContext.Session.GetString("UserId");
 
+            var userId = HttpContext.Session.GetString("UserId");   
+            var profiles = await bootcoinDbContext.Profiles.FirstOrDefaultAsync((x => x.UserId.ToString() == userId));
+
+            ViewBag.Department = profiles.Department;
+            ViewBag.Mbti = profiles.Mbti;
+            ViewBag.Zodiac = profiles.Zodiac;
+            ViewBag.FavoriteFood = profiles.FavoriteFood;
+            ViewBag.FunFact = profiles.FunFact;
+
+            return null;
         }
 
         public IActionResult View()
@@ -54,18 +65,17 @@ namespace bootcoin.Controllers
                 return Redirect("/Admin");
             else
                 return Redirect("/Logout");
-
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            SessionStart();
+            await SessionStart();
             
-            return View ();
+            return View ("~/Views/Trainee/Index.cshtml");
         }
         public async Task<IActionResult> TeamMember()
         {
-            SessionStart();
+            await SessionStart();
 
             var users = await bootcoinDbContext.Users.ToListAsync();
             var profiles = await bootcoinDbContext.Profiles.ToListAsync();
@@ -113,15 +123,15 @@ namespace bootcoin.Controllers
 
             return View("~/Views/Trainee/TeamMember.cshtml", models);
         }
-        public IActionResult Redeem()
+        public async Task<IActionResult> Redeem()
         {
-            SessionStart();
+            await SessionStart();
 
             return View("~/Views/Trainee/Redeem.cshtml");
         }
         public async Task<IActionResult> History()
         {
-            SessionStart();
+            await SessionStart();
 
             string userId = ViewBag.UserId;
 
