@@ -1,6 +1,240 @@
-﻿@{
+﻿@model List<bootcoin.Models.Trainee.TeamMemberViewModel>
+@{
     Layout = "~/Views/Shared/CommonFrame.cshtml";
 
-    ViewBag.Title = "Trainee - Teams";
+    ViewBag.Title = "Admin - Team Members";
     ViewBag.Active = "team";
+
+    var team = "B";
+}
+
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/adminTeams.css">
+    <link rel="stylesheet" href="~/css/Bootstrap.min.css">
+}
+
+<div class="content-header">
+    <div class="about">
+        <span class="title">Meet Team @(team)</span>
+        <span class="description">Below are the list of the team members</span>
+    </div>
+</div>
+
+<div class="modal fade" id="bootcoinModal" tabindex="-1"
+    aria-labelledby="bootcoinModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="~/icons/site-logo.png" alt="">
+                <h1 class="modal-title fs-5 ms-3"
+                    id="bootcoinModalLabel">Add
+                    bootcoin for agent!</h1>
+                <button type="button" class="btn-close
+                    btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <form method="post" action="/Admin/Input">
+                <div class="content-1">
+                    <div class="modal-body">
+                        <div>
+                            <label for="recipient-name"
+                                class="col-form-label
+                                pt-0">Agent name</label>
+                            <input type="text"
+                                class="form-control"
+                                id="recipient-name" style="height: 35px;"
+                                name="agentName" value="">
+                        </div>
+                        <div>
+                            <label for="recipient-name"
+                                class="col-form-label">Bootcoin
+                                amount</label>
+                            <input type="text"
+                                class="form-control"
+                                id="recipient-name" style="height: 35px;"
+                                name="amount">
+                        </div>
+                        <div>
+                            <label for="message-text"
+                                class="col-form-label">Notes</label>
+                            <textarea
+                                class="form-control"
+                                id="message-text" style="height: 80px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn
+                            btn-primary
+                            add-bootcoin-btn">Add</button>
+                    </div>
+                </div>
+                <div class="content-2">
+                    <div class="modal-body text-center">
+                        <div class="div d-flex
+                            justify-content-center
+                            align-items-center mb-3">
+                            <img src="~/images/check.png" alt="">
+                        </div>
+                        <h1 class="modal-title fs-5 ms-3">
+                            Bootcoin successfully added to
+                            the agent!
+                        </h1>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn
+                            btn-primary
+                            ok-bootcoin-btn"
+                            data-bs-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="profile-collage">
+    @{
+        var count = 0;
+    }
+    @foreach (var person in Model)
+    {
+        count += 1;
+        <div class="container prevent-select" style="padding: 0;">
+            <div class="card">
+                <div class="front">
+                    <img class="trainee-pic"
+                        src="https://source.unsplash.com/random/349x239?v=@count"
+                        alt="profile picture">
+                    <div class="detail">
+                        <div class="identity">
+                            <span class="name">@person.Name</span>
+                            <span class="role">@person.Role</span>
+                        </div>
+                        <div class="credit-primary">
+                            <div class="credit">
+                                <img src="~/icons/site-logo.png" alt="">
+                                <span class="value">@person.Balance</span>
+                            </div>
+                            <img class="detail" id="image"
+                                src="~/images/mdi_plus-box.png" alt=""
+                                data-bs-toggle="modal"
+                                data-bs-target="#bootcoinModal"
+                                data-name="@person.Name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="back">
+                    <div class="header">
+                        <span class="name" n>@person.Name</span>
+                        <div class="credit">
+                            <img src="~/icons/site-logo.png" alt="">
+                            <span class="value">@person.Balance</span>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <div class="attribute">
+                            <span class="name">Role</span>
+                            <span class="value">@person.Role</span>
+                        </div>
+                        <div class="attribute">
+                            <span class="name">Career Path</span>
+                            <span class="value">@person.Department</span>
+                        </div>
+                        <div class="attribute">
+                            <span class="name">MBTI</span>
+                            <span class="value">@person.Mbti</span>
+                        </div>
+                        <div class="attribute">
+                            <span class="name">Zodiac</span>
+                            <span class="value">@person.Zodiac</span>
+                        </div>
+                        <div class="attribute">
+                            <span class="name">Favorite Food</span>
+                            <span class="value">@person.FavoriteFood</span>
+                        </div>
+                        <div class="attribute">
+                            <span class="name">3 Fun Fact</span>
+                            <ol type="1" class="list">
+                                @if (person.FunFact != null)
+                                {
+                                    @foreach (var fact in person.FunFact.Split(";"))
+                                    {
+                                        <li><span>@fact</span></li>
+                                    }
+                                }
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@* <script>
+    const card = document.querySelector('.card');
+    card.addEventListener('click', function() {
+        if (card.classList.contains('flipped')) {
+            this.style.transform = 'rotateY(-180deg) rotateZ(-180deg)';
+            card.classList.remove('flipped');
+        } else {
+            this.style.transform = 'rotateY(180deg) rotateZ(180deg)';
+            this.style.color = 'var(--card-normal)';
+            card.classList.add('flipped');
+        }
+    });
+</script> *@
+<script>
+    document.addEventListener("click", function(event) {
+        if (event.target.classList.contains("detail")) {
+            var name = event.target.getAttribute("data-name");
+            var modalBody = document.querySelector(".modal-body #recipient-name");
+            modalBody.value = name;
+        }
+    });
+</script>
+<script>
+    const addButton = document.querySelector(".add-bootcoin-btn");
+    const okButton = document.querySelector(".ok-bootcoin-btn");
+    const closeButton = document.querySelector(".btn-close");
+    const cardElement = document.querySelector(".modal-body");
+    const content1 = document.querySelector(".content-1");
+    const content2 = document.querySelector(".content-2");
+    const modal = document.getElementById("bootcoinModal");
+
+    addButton.addEventListener("click", function () {
+    document.querySelector(".content-1").style.display = "none";
+    document.querySelector(".content-2").style.display = "block";
+    });
+
+    okButton.addEventListener("click", function () {
+    setTimeout(function () {
+        document.querySelector(".content-1").style.display = "block";
+        document.querySelector(".content-2").style.display = "none";
+    }, 500);
+    });
+
+    closeButton.addEventListener("click", function () {
+    setTimeout(function () {
+        document.querySelector(".content-1").style.display = "block";
+        document.querySelector(".content-2").style.display = "none";
+    }, 500);
+    });
+
+    modal.addEventListener("click", function (event) {
+    if (event.target.classList.contains("modal")) {
+        setTimeout(function () {
+        document.querySelector(".content-1").style.display = "block";
+        document.querySelector(".content-2").style.display = "none";
+        }, 500);
+    }
+    });
+</script>
+@section Scripts {
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/Bootstrap.min.js"></script>
 }

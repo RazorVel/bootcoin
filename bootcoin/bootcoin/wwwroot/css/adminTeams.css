@@ -24,16 +24,21 @@
     transition: transform ease-in-out 800ms;
 }
 
-.profile-collage .container:hover .card {
+/* .container.flipped {
+    transform: rotateY(180deg) rotateZ(180deg);
+} */
+
+/* .profile-collage .container:active .card {
     transform: rotateY(180deg) rotateZ(180deg);
     color: var(--card-normal);
-}
+} */
 
 .profile-collage .container .card .front,
 .profile-collage .container .card .back {
     position: absolute;
     width: 349px;
     height: 313px;
+    backface-visibility: hidden;
     background-color: var(--card-background);
 }
 
@@ -226,4 +231,43 @@
 .profile-collage .container .card .back .detail .attribute .list li:nth-child(1) span::before {
     content: ":  " counter(elementcounter) ". ";
     counter-increment: elementcounter;
+}
+
+.content-1 {
+    display: block;
+}
+
+.content-2 {
+    display: none;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 12px;
+}
+
+.modal-header {
+    background-color: #2B91FE;
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.btn-close {
+    background-color: transparent;
+}
+
+.modal-body form {
+    font-weight: 500;
+}
+
+.modal-footer {
+    justify-content: center !important;
+    border-top: none !important;
+}
+
+.modal-footer button {
+    width: 45%;
+    border-radius: 20px;
+    background-color: #2B91FE;
+    border: none;
 }
