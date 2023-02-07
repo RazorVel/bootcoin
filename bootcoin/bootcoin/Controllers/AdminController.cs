@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using bootcoin.Data;
 using Microsoft.EntityFrameworkCore;
+using bootcoin.Models.Trainee;
 // using System.Web;
 // using System.Web.Mvc;
 
@@ -68,13 +69,57 @@ namespace bootcoin.Controllers
         {
             await SessionStart();
 
-            return View();
+            return View("~/Views/Admin/Index.cshtml");
         }
         public async Task<IActionResult> Teams()
         {
             await SessionStart();
 
-            return View("~/Views/Admin/Teams.cshtml");
+            var users = await bootcoinDbContext.Users.ToListAsync();
+            var profiles = await bootcoinDbContext.Profiles.ToListAsync();
+
+            var people = users.Join(
+                profiles,
+                users => users.UserId,
+                profiles => profiles.UserId,
+                (users, profiles) => new
+                {
+                    Name = users.Name,
+                    Role = users.Role,
+                    Balance = users.Balance,
+                    Avatar = profiles.Avatar,
+                    Department = profiles.Department,
+                    Mbti = profiles.Mbti,
+                    Zodiac = profiles.Zodiac,
+                    FavoriteFood = profiles.FavoriteFood,
+                    FunFact = profiles.FunFact
+                }
+            );
+
+            //filter by team, possible future upgrade
+            //people = people.Where(x => x.Team == userTeam);
+
+            people = people.Where(x => x.Role == "Participant");
+
+            List<TeamMemberViewModel> models = new List<TeamMemberViewModel>();
+
+            foreach (var person in people)
+            {
+                models.Add(new TeamMemberViewModel()
+                {
+                    Name = person.Name,
+                    Role = person.Role,
+                    Balance = person.Balance,
+                    Avatar = person.Avatar,
+                    Department = person.Department,
+                    Mbti = person.Mbti,
+                    Zodiac = person.Zodiac,
+                    FavoriteFood = person.FavoriteFood,
+                    FunFact = person.FunFact
+                });
+            }
+
+            return View("~/Views/Admin/Teams.cshtml", models);
         }
     }
 }

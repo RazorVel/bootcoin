@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\css\\AdminHome.css",
+      "PackagePath": "staticwebassets\\css\\AdminHome.css"
+    },
+    {
       "Id": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\css\\AuthSection.css",
       "PackagePath": "staticwebassets\\css\\AuthSection.css"
     },

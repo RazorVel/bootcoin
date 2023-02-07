@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WqR6F9tHXOjU5vCNLRGq+zbYdAOnZM186sh5S15gEB8=",
+  "Hash": "7w+4Misz6JBbgmdpn9QBvYkjIaX8yMtO2TMKEYDS5qI=",
   "Source": "bootcoin",
   "BasePath": "_content/bootcoin",
   "Mode": "Default",
@@ -32,6 +32,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\_Layout.css"
+    },
+    {
+      "Identity": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\css\\AdminHome.css",
+      "SourceId": "bootcoin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\",
+      "BasePath": "_content/bootcoin",
+      "RelativePath": "css/AdminHome.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\AdminHome.css"
     },
     {
       "Identity": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\css\\AuthSection.css",
