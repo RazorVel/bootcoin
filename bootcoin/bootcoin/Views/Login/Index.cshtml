@@ -10,6 +10,27 @@
 }
 
 @section Scripts {
+    <script>
+        let entries = document.querySelectorAll(".frame .form .data .entry");
+
+        entries.forEach(entry => {
+            let eye = entry.querySelector("img.feature[alt='eye']");
+
+            if (eye){
+                eye.addEventListener("click", (e) => {
+                    let input = entry.querySelector("input");
+
+                    if (input && input.type == "password"){
+                        input.type = "text";
+                    }
+                    else if (input && input.type == "text"){
+                        input.type = "password";
+                    }
+                });
+            }
+        });
+    </script>
+
     @if (ViewBag.Error != null)
     {
         <script>alert("@ViewBag.Error");</script>
