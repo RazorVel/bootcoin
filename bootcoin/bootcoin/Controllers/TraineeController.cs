@@ -33,11 +33,14 @@ namespace bootcoin.Controllers
             var userId = HttpContext.Session.GetString("UserId");   
             var profiles = await bootcoinDbContext.Profiles.FirstOrDefaultAsync((x => x.UserId.ToString() == userId));
 
-            ViewBag.Department = profiles.Department;
-            ViewBag.Mbti = profiles.Mbti;
-            ViewBag.Zodiac = profiles.Zodiac;
-            ViewBag.FavoriteFood = profiles.FavoriteFood;
-            ViewBag.FunFact = profiles.FunFact;
+            if (profiles != null)
+            {
+                ViewBag.Department = profiles.Department;
+                ViewBag.Mbti = profiles.Mbti;
+                ViewBag.Zodiac = profiles.Zodiac;
+                ViewBag.FavoriteFood = profiles.FavoriteFood;
+                ViewBag.FunFact = profiles.FunFact;
+            }
 
             return null;
         }

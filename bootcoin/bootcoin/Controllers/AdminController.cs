@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using bootcoin.Data;
 using Microsoft.EntityFrameworkCore;
-using bootcoin.Models.Trainee;
+using bootcoin.Models.Admin;
+using bootcoin.Models.Domain;
 // using System.Web;
 // using System.Web.Mvc;
 
@@ -31,11 +32,14 @@ namespace bootcoin.Controllers
             var userId = HttpContext.Session.GetString("UserId");
             var profiles = await bootcoinDbContext.Profiles.FirstOrDefaultAsync((x => x.UserId.ToString() == userId));
 
-            ViewBag.Department = profiles.Department;
-            ViewBag.Mbti = profiles.Mbti;
-            ViewBag.Zodiac = profiles.Zodiac;
-            ViewBag.FavoriteFood = profiles.FavoriteFood;
-            ViewBag.FunFact = profiles.FunFact;
+            if (profiles != null)
+            {
+                ViewBag.Department = profiles.Department;
+                ViewBag.Mbti = profiles.Mbti;
+                ViewBag.Zodiac = profiles.Zodiac;
+                ViewBag.FavoriteFood = profiles.FavoriteFood;
+                ViewBag.FunFact = profiles.FunFact;
+            }
 
             return null;
         }
@@ -84,6 +88,7 @@ namespace bootcoin.Controllers
                 profiles => profiles.UserId,
                 (users, profiles) => new
                 {
+                    Email = users.Email,
                     Name = users.Name,
                     Role = users.Role,
                     Balance = users.Balance,
@@ -101,12 +106,13 @@ namespace bootcoin.Controllers
 
             people = people.Where(x => x.Role == "Participant");
 
-            List<TeamMemberViewModel> models = new List<TeamMemberViewModel>();
+            List<TeamsViewModel> models = new List<TeamsViewModel>();
 
             foreach (var person in people)
             {
-                models.Add(new TeamMemberViewModel()
+                models.Add(new TeamsViewModel()
                 {
+                    Email = person.Email,
                     Name = person.Name,
                     Role = person.Role,
                     Balance = person.Balance,
@@ -120,6 +126,57 @@ namespace bootcoin.Controllers
             }
 
             return View("~/Views/Admin/Teams.cshtml", models);
+        }
+
+        public async Task<IActionResult> InputCoin()
+        {
+            await SessionStart();
+
+            string email = Request.Form["email"];
+            var user = await bootcoinDbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
+
+            int amount;
+            try
+            {
+                amount = Int32.Parse(Request.Form["amount"]);
+            }
+            catch (FormatException e)
+            {
+                amount = 0;
+            }
+
+            if (user != null)
+            {
+                if (user.Balance != null)
+                    user.Balance = user.Balance + amount;
+                else
+                    user.Balance = amount;
+
+                Guid transactionId = Guid.NewGuid();
+
+                TransactionHeader newTransactionHeader = new TransactionHeader()
+                {
+                    TransactionId = transactionId,
+                    SourceId = Guid.Parse(ViewBag.UserId),
+                    TargetId = user.UserId,
+                    Date = DateTime.Now,
+                    Type = "Input"
+                };
+
+                TransactionDetail newTransactoinDetail = new TransactionDetail()
+                {
+                    TransactionId = transactionId,
+                    Amount = amount,
+                    BalanceAfter = (int)user.Balance
+                };
+
+                await bootcoinDbContext.TransactionHeaders.AddAsync(newTransactionHeader);
+                await bootcoinDbContext.TransactionDetails.AddAsync(newTransactoinDetail);
+            }
+
+            bootcoinDbContext.SaveChanges();
+
+            return RedirectToAction("Teams");
         }
     }
 }

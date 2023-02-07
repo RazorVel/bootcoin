@@ -6,7 +6,7 @@
 }
 
 .profile-collage .container {
-    height: 343px;
+    height: 350px;
     width: 378px;
     cursor: pointer;
     perspective: 600px;
@@ -33,7 +33,7 @@
 .profile-collage .container .card .back {
     position: absolute;
     width: 349px;
-    height: 313px;
+    height: 320px;
     background-color: var(--card-background);
 }
 
@@ -59,6 +59,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.profile-collage .container .card .front .detail .identity .hidden{
+    display: none;
 }
 
 .profile-collage .container .card .front .detail .identity .name {

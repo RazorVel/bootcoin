@@ -1,0 +1,192 @@
+﻿.profile-collage .container:hover .card {
+    transform: none;
+}
+
+.profile-collage .container .card.flip {
+    transform: rotateY(180deg) rotateZ(180deg);
+}
+
+.profile-collage .container .card .front .detail .credit {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.profile-collage .container .card .front .detail .credit .balance{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-collage .container .card .front .detail .credit .balance > img {
+    width: 24px;
+    height: 24px;
+}
+
+.profile-collage .container .card .front .detail .credit .balance > span {
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--card-value);
+}
+
+.profile-collage .container .card .front .detail .credit .add{
+    background-color: var(--card-add-balance-back);
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    padding-bottom: 3px;
+}
+
+.profile-collage .container .card .front .detail .credit .add > span{
+    color: var(--card-add-balance-icon);
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.pop-up-window{
+    height: fit-content;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index:2;
+    border-radius: 15px;
+    /*display: flex;*/
+    display: none;
+    flex-direction: column;
+}
+
+.pop-up-window.input-coin.active{
+    display: flex;
+}
+
+.pop-up-window .header{
+    width: 100%;
+    background-color: var(--pop-up-window-header-back);
+    display: flex;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    align-items: center;
+    padding: 15px;
+}
+
+.pop-up-window .header > img{
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+}
+
+.pop-up-window .header .title{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--pop-up-window-header-text);
+}
+
+.pop-up-window .header .close-button{
+    width: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    margin-left: auto;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.pop-up-window .header .close-button .bar{
+    width: 24px;
+    height: 2px;
+    display: block;
+    background-color: var(--pop-up-window-header-close);
+}
+
+.pop-up-window .header .close-button span:nth-child(1){
+    transform: rotate(45deg) translateY(4px) translateX(50%);    
+}
+
+.pop-up-window .header .close-button span:nth-child(2){
+    transform: rotate(-45deg) translateY(-4px) translateX(50%);
+}
+
+.pop-up-window .body{
+    width: 100%;
+    background-color: var(--pop-up-window-body-back);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    min-height: 200px;
+    padding: 20px;
+}
+
+.pop-up-window .body form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pop-up-window .body form .submit{
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.pop-up-window .body form .entry{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pop-up-window .body form .entry > label{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.pop-up-window .body form .entry > label.required::after{
+    content: '*';
+    color: var(--pop-up-window-form-label-required);
+}
+
+
+.pop-up-window .body form .entry > input{
+    background-color: var(--pop-up-window-form-input-back);
+    border: 1px solid var(--pop-up-window-form-input-border);
+    color: var(--pop-up-window-form-input-text);
+    border-radius: 10px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+}
+
+.pop-up-window .body form .submit{
+    color: var(--pop-up-window-form-submit-text);
+    background-color: var(--pop-up-window-form-submit-back);
+    min-width: 240px;
+    width: fit-content;
+    align-self: center;
+    padding: 10px 20px;
+    font-size: 18;
+    font-weight: 600;
+    border: none;
+}
+
+.cover-overlay{
+    background-color: var(--cover-overlay);
+    backdrop-filter: blur(2px);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.cover-overlay.active{
+    display: initial;
+}

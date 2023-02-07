@@ -1,4 +1,4 @@
-﻿@model List<bootcoin.Models.Trainee.TeamMemberViewModel>
+﻿@model List<bootcoin.Models.Admin.TeamsViewModel>
 
 @{
     Layout = "~/Views/Shared/CommonFrame.cshtml";
@@ -11,11 +11,17 @@
 
 @section Styles{
     <link rel="stylesheet" href="~/css/ProfileCollage.css">
+    <link rel="stylesheet" href="~/css/Teams.css" />
+}
+
+@section Scripts{
+    <script src="~/js/Teams.js"></script>
 }
 
 <div class="content-header">
     <div class="about">
-        <span class="title">Meet Team @(team)</span>
+        @*<span class="title">Meet Team @(team)</span>*@
+        <span class="title">Meet The Team</span>
         <span class="description">Below are the list of the team members</span>
     </div>
 </div>
@@ -34,12 +40,18 @@
                     <img src="https://source.unsplash.com/random/349x239?v=@count" alt="profile picture">
                     <div class="detail">
                         <div class="identity">
+                            <span class="hidden email">@person.Email</span>
                             <span class="name">@person.Name</span>
                             <span class="role">@person.Role</span>
                         </div>
                         <div class="credit">
-                            <img src="~/icons/site-logo.png" alt="">
-                            <span class="value">@person.Balance</span>
+                            <div class="balance">
+                                <img src="~/icons/site-logo.png" alt="">
+                                <span class="value">@person.Balance</span>
+                            </div>
+                            <div class="add">
+                                <span>+</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -92,3 +104,29 @@
 
     
 </div>
+
+<div class="pop-up-window input-coin">
+    <div class="header">
+        <img src="~/icons/site-logo.png" alt="">
+        <span class="title">Add bootcoin for agent!</span>
+        <div class="close-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    <div class="body">
+        <form action="/Admin/InputCoin" method="post">
+            <input type="hidden" name="email" value="" />
+
+            <div class="entry">
+                <label for="amount" class="required">Bootcoin amount</label>
+                <input required type="number" min="0" id="amount" name="amount"/>
+            </div>
+
+            <input type="submit" class="submit" value="Add" />
+        </form>
+    </div>
+</div>
+
+
+<div class="cover-overlay"></div>

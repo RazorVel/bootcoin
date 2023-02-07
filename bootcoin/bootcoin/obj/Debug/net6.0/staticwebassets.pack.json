@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\css\\Redeem.css"
     },
     {
+      "Id": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\css\\Teams.css",
+      "PackagePath": "staticwebassets\\css\\Teams.css"
+    },
+    {
       "Id": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\css\\TraineeHome.css",
       "PackagePath": "staticwebassets\\css\\TraineeHome.css"
     },
@@ -175,6 +179,10 @@
     {
       "Id": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\js\\Popper.min.js",
       "PackagePath": "staticwebassets\\js\\Popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\js\\Teams.js",
+      "PackagePath": "staticwebassets\\js\\Teams.js"
     },
     {
       "Id": "C:\\Users\\felik\\Desktop\\bootcoin\\bootcoin\\bootcoin\\wwwroot\\lib\\bootstrap\\LICENSE",
