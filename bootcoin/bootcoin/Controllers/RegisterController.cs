@@ -48,7 +48,12 @@ namespace bootcoin.Controllers
             var newProfile = new Profile()
             {
                 ProfileId = Guid.NewGuid(),
-                UserId = newUserId
+                UserId = newUserId,
+                Department = "",
+                Mbti = "",
+                Zodiac = "",
+                FavoriteFood = "",
+                FunFact = ""
             };
 
             var userExists = await bootcoinDbContext.Users.FirstOrDefaultAsync(x => x.Email == request.Email);
