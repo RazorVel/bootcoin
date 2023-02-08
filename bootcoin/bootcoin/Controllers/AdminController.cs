@@ -8,6 +8,8 @@ using bootcoin.Data;
 using Microsoft.EntityFrameworkCore;
 using bootcoin.Models.Admin;
 using bootcoin.Models.Domain;
+using System.Text;
+using Microsoft.AspNetCore.Identity;
 // using System.Web;
 // using System.Web.Mvc;
 
@@ -177,6 +179,85 @@ namespace bootcoin.Controllers
             bootcoinDbContext.SaveChanges();
 
             return RedirectToAction("Teams");
+        }
+
+        public async Task<IActionResult> ExportTransactionLog ()
+        {
+            await SessionStart();
+
+            if (ViewBag.Role == "Admin") 
+                { }
+            else if (ViewBag.Role == "Participant")
+                return Redirect("/Trainee");
+            else
+                return Redirect("/Logout");
+
+            var builder = new StringBuilder();
+
+            builder.AppendLine("Date,Name,Email,Type,Amount,Balance After");
+
+            var headers = await bootcoinDbContext.TransactionHeaders.ToListAsync();
+            var details = await bootcoinDbContext.TransactionDetails.ToListAsync();
+
+            var transactions = headers.Join(
+                details,
+                headers => headers.TransactionId,
+                details => details.TransactionId,
+                (headers, details) => new
+                {
+                    SourceId = headers.SourceId,
+                    TargetId = headers.TargetId,
+                    Date = headers.Date,
+                    Type = headers.Type,
+                    Amount = details.Amount,
+                    BalanceAfter = details.BalanceAfter
+                }
+            );
+
+            var users = await bootcoinDbContext.Users.ToListAsync();
+
+            var income = transactions.Join(
+                users,
+                transaction => transaction.TargetId,
+                users => users.UserId,
+                (transactions, users) => new
+                {
+                    Name = users.Name,
+                    Email = users.Email,
+                    Role = users.Role,
+                    Date = transactions.Date,
+                    Type = transactions.Type,
+                    Amount = transactions.Amount,
+                    BalanceAfter = transactions.BalanceAfter
+                }
+            );
+
+            var outcome = transactions.Join(
+                users,
+                transaction => transaction.SourceId,
+                users => users.UserId,
+                (transactions, users) => new
+                {
+                    Name = users.Name,
+                    Email = users.Email,
+                    Role = users.Role,
+                    Date = transactions.Date,
+                    Type = transactions.Type,
+                    Amount = transactions.Amount,
+                    BalanceAfter = transactions.BalanceAfter
+                }
+            );
+
+            var merger = income.Union(outcome);
+
+            merger = merger.Where(x => x.Role == "Participant");
+
+            foreach(var record in merger)
+            {
+                builder.AppendLine($"{record.Date},{record.Name},{record.Email},{record.Type},{record.Amount},{record.BalanceAfter}");
+            }
+
+            return File(Encoding.UTF8.GetBytes(builder.ToString()), "text/csv", "TransactionLog.csv");
         }
     }
 }
